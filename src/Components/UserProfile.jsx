@@ -20,7 +20,6 @@ const UserProfile = () => {
       }
     });
   }, []);
-  console.log(typeof userStat.metadata.creationTime);
   return (
     <>
       <div className={styles.innerUserProfile}>
@@ -29,15 +28,20 @@ const UserProfile = () => {
             <img className={styles.avaImg} src={ava} alt="ava" />
           </div>
           <MyBackButton />
+          <div>
+            <p>
+              Дата создания аккаунта {/* {userStat.metadata.creationTime} */}
+            </p>
+            <p>
+              Последний вход в аккаунт{" "}
+              {/* {userStat.metadata.lastSignInTime} */}
+            </p>
+            <p>
+              Почта подтверждена{" "}
+              {/* {userStat.metadata.emailVerified ? "да" : "нет"} */}
+            </p>
+          </div>
         </div>
-      </div>
-      Профиль
-      <div>
-        <p>Дата создания аккаунта {userStat.metadata.creationTime}</p>
-        <p>Последний вход в аккаунт {userStat.metadata.lastSignInTime}</p>
-        <p>
-          Почта подтверждена {userStat.metadata.emailVerified ? "да" : "нет"}
-        </p>
       </div>
     </>
   );

@@ -141,6 +141,12 @@
   background-color: rgba(50, 216, 77, 0.609);
   color: #000;
 }
+.manImg {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  object-fit: cover;
+}
 @media (max-width: 768px) {
   .container {
     flex-wrap: wrap;

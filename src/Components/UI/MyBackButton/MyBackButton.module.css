@@ -1,10 +1,13 @@
 .backbtn {
   cursor: pointer;
   position: absolute;
+  width: 67px;
+  min-height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 5px;
-  display: inline-block;
-  padding: 3px 10px;
   background-color: #c1c1c18e;
   border-radius: 3px;
   color: #fff;

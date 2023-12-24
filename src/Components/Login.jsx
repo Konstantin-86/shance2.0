@@ -21,13 +21,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [handleError, setHandleError] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     setEmail(data.get("email"));
     setPassword(data.get("password"));
 
-    signInWithEmailAndPassword(auth, email, password)
+    await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
@@ -35,6 +35,7 @@ const Login = () => {
         console.log(user);
       })
       .catch((error) => {
+        console.log(auth);
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);

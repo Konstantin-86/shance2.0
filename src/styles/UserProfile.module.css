@@ -1,8 +1,22 @@
+.innerUserProfile {
+  background-image: url(../assets//images//4bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  position: relative;
+  padding-top: 5px;
+  width: 100%;
+  min-height: 100dvh;
+}
+.userContainer {
+  position: relative;
+}
 .box {
   background-color: var(--mainColor);
   width: 150px;
   height: 150px;
   overflow: hidden;
+  margin: 0 auto;
 }
 .avaImg {
   width: 100%;

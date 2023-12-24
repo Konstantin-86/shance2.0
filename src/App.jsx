@@ -6,10 +6,13 @@ import { auth } from "./firebase";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+import man from "./assets/images/icons/manIcon.png";
+
 import styles from "./styles//App.module.css";
 
 function App() {
   const [showTitle, setShowTitle] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -22,7 +25,7 @@ function App() {
         }, 500);
       }
     });
-  }, []);
+  }, [navigate]);
   return (
     <>
       <div className={styles.innerApp}>
@@ -43,6 +46,7 @@ function App() {
               <div className={styles.loginButton}>Войти</div>
             </Link>
           </div>
+          <img className={styles.manImg} src={man} alt="man" />
         </div>
       </div>
     </>

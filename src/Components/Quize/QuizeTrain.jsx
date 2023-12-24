@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+
+import { useSwipeable } from "react-swipeable";
+
 import styles from "../../styles/QuizeTrain.module.css";
 import MyButton from "../UI/MyButton";
 import MyBackButton from "../UI/MyBackButton/MyBackButton";
@@ -19,6 +22,16 @@ const QuizeTrain = ({ mainResult }) => {
   const nextQuestionFunc = () => {
     setGoSearchItem(false);
     setCountQuest(countQuest + 1);
+    setShowCorrectNumber(null);
+    // закончились вопросы
+    if (mainResult.length - 1 == countQuest) {
+      setEndOfQuestions(false);
+    }
+  };
+  const prevQuestionFunc = () => {
+    if (countQuest == 0) return setCountQuest(0);
+    setGoSearchItem(false);
+    setCountQuest(countQuest - 1);
     setShowCorrectNumber(null);
     // закончились вопросы
     if (mainResult.length - 1 == countQuest) {
@@ -47,9 +60,27 @@ const QuizeTrain = ({ mainResult }) => {
     setGoSearchItem(true);
     setGoSearchArr(item);
   };
+  const handlers = useSwipeable({
+    onSwiped: ({ dir }) => {
+      if (dir == "Left") nextQuestionFunc();
+      if (dir == "Right") prevQuestionFunc();
+    },
+  });
+
+  // setup ref for your usage
+  const myRef = useRef();
+
+  const refPassthrough = (el) => {
+    // call useSwipeable ref prop with el
+    handlers.ref(el);
+
+    // set myRef el so you can access it yourself
+    myRef.current = el;
+  };
+  /* const showCorrectAnswer = () => {}; */
   return (
     <div>
-      <div className={styles.mainContainer}>
+      <div {...handlers} ref={refPassthrough} className={styles.mainContainer}>
         {endOfQuestions ? (
           <div className={styles.trainWrap}>
             <div className={styles.numberOfQuestion}>
@@ -83,6 +114,12 @@ const QuizeTrain = ({ mainResult }) => {
               </div>
             </div>
             <div className={styles.nameOfProg}>Тренировка</div>
+            <div
+              onClick={showCorrectAnswer}
+              className={styles.showCorrectAnswer}
+            >
+              Показывать правильный ответ
+            </div>
             <MyBackButton />
             {goSearchItem ? (
               <div className={styles.itemBox}>

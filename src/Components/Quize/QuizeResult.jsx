@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "../../styles/QuizeResult.module.css";
 
-import { Button } from "@mui/material";
+import MyBackButton from "../UI/MyBackButton/MyBackButton";
+import MyButton from "../UI/MyButton";
 
 import notbad from "../../assets/images/smailIcons/notBad.png";
 import bad from "../../assets/images/smailIcons/bad.png";
@@ -103,28 +104,37 @@ const QuizeResult = ({ newMail, arrForResult, correctAnswrNumber }) => {
   return (
     <>
       <div className={styles.container}>
-        <h2 className={styles.title}>Результаты</h2>
-        <div>Правильных ответов {correctAnswrNumber} из 10</div>
+        <div className={styles.box}>
+          <MyBackButton />
+          {/* <Link to={"/main/quize"}>
+            <div className={styles.refreshButton}>Заново</div>
+          </Link> */}
 
-        <div className={styles.imgWrapper}>
-          <img className={styles.imageIcon} src={notbadState} alt="notbad" />
-        </div>
-        <div className={styles.buttonsInner}>
-          <Button onClick={showCoorectFunc} variant="contained">
-            Правильные ответы
-          </Button>
-          <Button variant="contained" onClick={goToStat}>
-            Статистика
-          </Button>
-        </div>
-        <div
-          className={
-            showAnswers
-              ? styles.innerCoorectAnswersShow
-              : styles.innerCoorectAnswersHide
-          }
-        >
-          {itemList}
+          <h2 className={styles.title}>Результаты</h2>
+          <div className={styles.countQuest}>
+            Правильных ответов {correctAnswrNumber} из 10
+          </div>
+
+          <div className={styles.imgWrapper}>
+            <img className={styles.imageIcon} src={notbadState} alt="notbad" />
+          </div>
+          <div className={styles.buttonsInner}>
+            <MyButton onClick={showCoorectFunc} variant="contained">
+              Правильные ответы
+            </MyButton>
+            <MyButton variant="contained" onClick={goToStat}>
+              Статистика
+            </MyButton>
+          </div>
+          <div
+            className={
+              showAnswers
+                ? styles.innerCoorectAnswersShow
+                : styles.innerCoorectAnswersHide
+            }
+          >
+            {itemList}
+          </div>
         </div>
       </div>
     </>

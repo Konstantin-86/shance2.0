@@ -1,12 +1,41 @@
 .container {
-  max-width: 800px;
-  padding: 0 5px;
+  min-height: 100dvh;
+  background-image: url(../assets//images//4bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  padding: 5px;
+}
+.box {
+  position: relative;
+  max-width: 1210px;
   margin: 0 auto;
-  text-align: center;
+  padding-top: 5px;
 }
 .title {
   margin-bottom: 20px;
+  text-align: center;
 }
+.countQuest {
+  display: flex;
+  justify-content: center;
+}
+.refreshButton {
+  cursor: pointer;
+  position: absolute;
+  width: 67px;
+  min-height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 5px;
+  background-color: #c1c1c18e;
+  border-radius: 3px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
 .imgWrapper {
   width: 300px;
   overflow: hidden;
@@ -68,6 +97,11 @@
   height: 60px;
   object-fit: cover;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .refreshButton:hover {
+    background-color: var(--mainColor);
+  }
 }
 @media (max-width: 768px) {
   .imgWrapper {
