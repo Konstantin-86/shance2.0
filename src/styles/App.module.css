@@ -1,0 +1,179 @@
+.innerApp {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../assets/images/mainBg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.appContainer {
+  position: relative;
+  max-width: 1220px;
+  margin: 0 auto;
+  height: 100%;
+  margin-top: auto;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.line1,
+.line2,
+.line3,
+.line4 {
+  position: absolute;
+  transform: rotate(-35deg);
+  border-radius: 30px;
+}
+.line1 {
+  top: 10%;
+  right: -5%;
+  width: 300px;
+  height: 25px;
+  background-color: #e5d208;
+}
+.line2 {
+  top: 60%;
+  right: -10%;
+  width: 600px;
+  height: 55px;
+  background-color: rgba(35, 177, 242, 0.5);
+}
+.line3 {
+  top: -10%;
+  left: 10%;
+  width: 600px;
+  height: 25px;
+  background-color: rgba(229, 140, 32, 0.5);
+}
+.line4 {
+  top: 60%;
+  left: -10%;
+  width: 600px;
+  height: 55px;
+  background-color: rgba(55, 22, 166, 0.5);
+}
+.titleActive {
+  text-align: center;
+  padding-top: 15px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition: all 0.4s;
+}
+.titleHide {
+  text-align: center;
+  padding-top: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s;
+}
+.singUpButton {
+  min-width: 150px;
+  color: var(--mainColor);
+  padding: 10px 25px;
+  background-color: #fff;
+  border-radius: 7px;
+  border: 2px solid var(--mainColor);
+  text-decoration: none;
+}
+
+.loginButton {
+  min-width: 150px;
+  text-align: center;
+  color: #fff;
+  padding: 10px 25px;
+  background-color: var(--mainColor);
+  border-radius: 7px;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.InnerButtons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.linkButton {
+  text-align: center;
+  width: 150px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: rgba(50, 216, 77, 0.609);
+  color: #000;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 5px;
+  }
+  .line1 {
+    top: 0%;
+    right: -24%;
+    width: 207px;
+    height: 15px;
+    background-color: #e5d208;
+  }
+  .line2 {
+    top: 17%;
+    left: -69%;
+    width: 364px;
+    height: 15px;
+    background-color: rgba(35, 177, 242, 0.5);
+  }
+  .line3 {
+    top: 54%;
+    left: -79%;
+    width: 600px;
+    height: 25px;
+    background-color: rgba(229, 140, 32, 0.5);
+  }
+  .line4 {
+    top: 79%;
+    left: -10%;
+    width: 600px;
+    height: 25px;
+    background-color: rgba(55, 22, 166, 0.5);
+  }
+}

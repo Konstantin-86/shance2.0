@@ -1,0 +1,44 @@
+.wrapPage {
+  width: 100%;
+  height: 100dvh;
+  background-image: url(../assets//images//4Bg.jpg);
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+.title {
+  margin-top: 25px;
+}
+.InnerPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  height: 70px;
+}
+.myselect {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 16px;
+  }
+  .box {
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+  }
+  .logo {
+    height: 50px;
+    object-fit: contain;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,119 @@
+.box {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5px;
+  background-image: url(../assets//images//4bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.container {
+  position: relative;
+  max-width: 1210px;
+  padding: 5px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.backbtn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: #c1c1c18e;
+  border-radius: 3px;
+  color: #fff;
+}
+.deleteIcon {
+  margin: 4px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.ButtonsWrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.deletePopUpShow {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000009f;
+  transition: all 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+.deletePopUpHide {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000009f;
+  transition: all 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+.InnerPopUp {
+  width: 400px;
+  padding: 10px;
+  background-color: #fff;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.InnerPopUp h3 {
+  text-align: center;
+}
+.titleTable {
+  display: flex;
+  font-size: 12px;
+  border-bottom: 2px solid #000;
+}
+.itemTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-bottom: 2px solid rgba(120, 118, 118, 0.523);
+  margin-bottom: 10px;
+  padding: 7px 0;
+}
+.itemTable1 {
+  width: 5%;
+}
+.itemTable2 {
+  width: 35%;
+}
+.itemTable3 {
+  width: 25%;
+}
+.itemTable4 {
+  text-align: center;
+  width: 35%;
+}
+.itemNumber {
+  width: 20px;
+}
+.itemName {
+  width: 180px;
+}
+.itemCorCount {
+  width: 20px;
+}
+.itemDate {
+  width: 80px;
+}

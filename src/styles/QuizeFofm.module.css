@@ -1,0 +1,48 @@
+.mainTitle {
+  text-align: center;
+  margin: 10px auto;
+}
+.Quest {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.InnerButton {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.formWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.nameOfTheme {
+  text-align: center;
+  max-width: 200px;
+  color: rgba(169, 168, 167, 0.613);
+}
+.numberOfQuestion {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ee6edb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.countDown {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #4a6beb;
+}
+.itemActive {
+  background-color: #a3a2a2;
+}
+.item {
+  background-color: #fff;
+}

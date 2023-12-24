@@ -1,0 +1,266 @@
+.mySelectel {
+  padding: 7px;
+  color: #000;
+  border: none;
+  border-bottom: 2px solid rgba(29, 99, 240, 0.8);
+  appearance: unset;
+  max-width: 320px;
+}
+.mySelectel:focus {
+  border-bottom: 2px solid green;
+  outline: none;
+}
+.customSelectInner {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.customSelectTextActive {
+  border: 2px solid var(--mainColor);
+  border-radius: 4px;
+  max-width: 320px;
+  min-height: 60px;
+  background-color: #fff;
+}
+.customSelectText {
+  border: 2px solid rgb(128, 128, 128, 0.5);
+  border-radius: 4px;
+  max-width: 320px;
+  min-height: 60px;
+  background-color: #fff;
+}
+.customSelectTitle {
+  position: relative;
+  /* top: 21px;
+  left: 20px; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  max-width: 240px;
+  height: 56px;
+  padding: 7px 15px;
+  color: #201f1f;
+  font-size: 15px;
+  z-index: 2;
+  transition: all 0.3s;
+}
+.customSelectTitleActive {
+  position: absolute;
+  font-size: 12px;
+  top: -6px;
+  left: 11px;
+  z-index: 6;
+  background-color: #fff;
+  padding: 0 5px;
+  font-weight: 400;
+  color: var(--mainColor);
+  transition: all 0.3s;
+}
+.nameSelect {
+  position: absolute;
+  width: 260px;
+  height: 56px;
+  background-color: #fff;
+  top: 2px;
+  left: 2px;
+  z-index: 5;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.customSelectArrow {
+  position: absolute;
+  top: 15px;
+  right: 11px;
+  width: 25px;
+  height: 25px;
+  transform: rotate(90deg);
+  transition: all 0.3s;
+}
+.customSelectArrowActive {
+  position: absolute;
+  top: 15px;
+  right: 11px;
+  width: 25px;
+  height: 25px;
+  transform: rotate(-90deg);
+  transition: all 0.3s;
+}
+.customSelectListActive {
+  position: absolute;
+  top: 67px;
+  left: -17px;
+  background-color: #fff;
+  width: 330px;
+  max-height: 500px;
+  overflow: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
+  box-shadow: -4px 3px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.customSelectList {
+  position: absolute;
+  top: 27px;
+  left: -17px;
+  background-color: #fff;
+  max-width: 330px;
+  max-height: 500px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.customSelectItem {
+  font-size: 14px;
+  margin: 7px 0;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.customSelectItem:hover {
+  background-color: rgba(207, 202, 202, 0.4);
+  margin: 7px 0;
+}
+.showButtonContainer {
+  margin-top: 20px;
+}
+.mainTitle {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.countQuestions {
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.inputSelect {
+  --s: 1em; /* control the size */
+  --c: var(--mainColor); /* the active color */
+
+  height: var(--s);
+  aspect-ratio: 1;
+  border: calc(var(--s) / 8) solid #939393;
+  padding: calc(var(--s) / 8);
+  background: radial-gradient(farthest-side, var(--c) 94%, #0000) 50%/0 0
+    no-repeat content-box;
+  border-radius: 50%;
+  outline-offset: calc(var(--s) / 10);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: inherit;
+  transition: 0.3s;
+  margin-right: 5px;
+}
+.inputSelect:checked {
+  border-color: var(--c);
+  background-size: 100% 100%;
+}
+.labelSelect {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 7px;
+}
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #9fccfa;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2em;
+  width: 2em;
+  inset: 0;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+  background: #0974f1;
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #0974f1;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.6em);
+}
+.swicherInnerShow {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.4s;
+}
+.swicherInnerHide {
+  transform: translateY(20px);
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+}
+.buttonWrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.innerRadioBtns {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.wrapMode {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 20px;
+}
+.imgOk {
+  width: 30px;
+  height: 30px;
+}
+.radioBtn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 137px;
+  border: 2px solid rgba(170, 166, 166, 0.516);
+  padding: 5px 7px;
+  border-radius: 7px;
+  min-height: 44px;
+}

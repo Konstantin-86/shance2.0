@@ -1,0 +1,23 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  width: 58px;
+  height: 58px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-bottom-color: blueviolet;
+  animation: rotation 5s linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

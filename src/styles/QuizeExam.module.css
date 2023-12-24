@@ -1,0 +1,52 @@
+.box {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5px;
+  background-image: url(../assets//images//3bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.trainWrap {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+.numberOfQuestion {
+  width: 60px;
+  padding: 3px 10px;
+  text-align: center;
+  background-color: #c1c1c18e;
+  border-radius: 3px;
+  color: #fff;
+}
+.nameOfProg {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: #c1c1c18e;
+  border-radius: 3px;
+  color: #fff;
+}
+.Quest {
+  font-weight: 600;
+  margin: 10px 0;
+}
+.itemActive {
+  padding: 5px;
+  background-color: #7f70d8;
+  border-radius: 7px;
+}
+.item {
+  padding: 5px;
+  border-radius: 7px;
+}
+.btnWrap {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,11 @@
+.box {
+  background-color: var(--mainColor);
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+.avaImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

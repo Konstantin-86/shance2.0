@@ -1,0 +1,132 @@
+.mainContainer {
+  width: 100%;
+  min-height: 100dvh;
+  background-image: url(../assets//images//3bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+.trainWrap {
+  position: relative;
+  max-width: 1210px;
+  height: 100dvh;
+  padding: 5px;
+  margin: 0 auto;
+}
+.numberOfQuestion {
+  width: 60px;
+  margin: 0 auto;
+  padding: 3px 10px;
+  text-align: center;
+  background-color: #c1c1c18e;
+  border-radius: 3px;
+  color: #fff;
+}
+.nameOfProg {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: #c1c1c18e;
+  border-radius: 3px;
+  color: #fff;
+}
+.backbtn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: #c1c1c18e;
+  border-radius: 3px;
+  color: #fff;
+}
+.search {
+  margin: 20px 0;
+  position: relative;
+}
+.inpt {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #c1c1c18e;
+  text-align: center;
+  width: 200px;
+  transition: all 0.3s;
+}
+.inpt:focus {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid #c1c1c18e;
+  text-align: center;
+  width: 250px;
+  scale: 1.05;
+  transition: all 0.3s;
+}
+.filtredSearchShow {
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 90%;
+  height: 50vh;
+  padding: 10px 5px;
+  overflow: auto;
+  background-color: rgb(199, 194, 194);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
+}
+.filtredSearchHide {
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 90%;
+  height: 50vh;
+  overflow: auto;
+  background-color: rgb(199, 194, 194);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+}
+.item {
+  padding: 5px 0;
+  font-size: 14px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.item:hover {
+  background-color: #fff;
+}
+.Quest {
+  font-weight: 600;
+  margin: 10px 0;
+}
+.answerItem {
+  margin: 10px 0;
+  cursor: pointer;
+}
+.correctAnswer {
+  display: inline-block;
+  margin: 10px 0;
+  background-color: rgba(177, 248, 84, 0.565);
+  padding: 5px;
+  border-radius: 7px;
+}
+.btnWrap {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+  .answerItem:hover {
+    background-color: #848484;
+    color: #fff;
+  }
+}
