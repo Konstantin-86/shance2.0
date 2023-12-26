@@ -6,8 +6,6 @@ import { auth } from "./firebase";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-import man from "./assets/images/icons/manIcon.png";
-
 import styles from "./styles//App.module.css";
 
 function App() {
@@ -45,8 +43,10 @@ function App() {
             <Link to={"login/"}>
               <div className={styles.loginButton}>Войти</div>
             </Link>
+            <Link to={"main/"}>
+              <div className={styles.noAuthButton}>Войти как гость</div>
+            </Link>
           </div>
-          <img className={styles.manImg} src={man} alt="man" />
         </div>
       </div>
     </>

@@ -8,7 +8,9 @@
   background-position: 0 0;
 }
 .trainWrap {
+  position: relative;
   max-width: 1210px;
+  min-height: 100dvh;
   margin: 0 auto;
   padding: 0 5px;
 }
@@ -34,6 +36,7 @@
 .Quest {
   font-weight: 600;
   margin: 10px 0;
+  margin-top: 30px;
 }
 .itemActive {
   padding: 5px;

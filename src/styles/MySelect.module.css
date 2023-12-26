@@ -259,7 +259,7 @@
   justify-content: center;
   align-items: center;
   min-width: 137px;
-  border: 2px solid rgba(170, 166, 166, 0.516);
+  border: 2px solid var(--mainColor);
   padding: 5px 7px;
   border-radius: 7px;
   min-height: 44px;

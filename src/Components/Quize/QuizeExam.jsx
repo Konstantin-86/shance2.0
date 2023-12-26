@@ -1,5 +1,6 @@
 import MyButton from "../UI/MyButton";
 import styles from "../../styles/QuizeExam.module.css";
+import CountDown from "../CountDown/CountDown";
 
 const QuizeExam = ({
   mainResult,
@@ -7,6 +8,7 @@ const QuizeExam = ({
   preSelection,
   preSelectionFunc,
   nextQuestionFunc,
+  giveSaveTime,
 }) => {
   return (
     <div>
@@ -15,6 +17,7 @@ const QuizeExam = ({
           <div className={styles.numberOfQuestion}>
             {countQuest + 1} / <br /> {mainResult.length}
           </div>
+          <CountDown giveSaveTime={giveSaveTime} />
           <div className={styles.nameOfProg}>Экзамен</div>
           <div className={styles.Quest}>{mainResult[countQuest].NAMEB}</div>
 

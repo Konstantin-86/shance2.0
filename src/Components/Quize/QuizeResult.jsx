@@ -100,7 +100,6 @@ const QuizeResult = ({ newMail, arrForResult, correctAnswrNumber }) => {
       </div>
     </div>
   ));
-
   return (
     <>
       <div className={styles.container}>

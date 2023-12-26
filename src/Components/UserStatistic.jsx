@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 import { red, green } from "@mui/material/colors";
 
@@ -13,17 +13,25 @@ import MyBackButton from "./UI/MyBackButton/MyBackButton";
 const UserStatistic = () => {
   const local = useLocation();
   const newMail = local.state.newMail;
+
+  const navigate = useNavigate();
+
   const [stat, setStat] = useState([]);
   const [popUpBundle, setPopUpBundle] = useState(false);
   const [currentIndexToDelete, setCurrentIndexToDelete] = useState(0);
+  const [isAuth, setAuth] = useState(false);
 
   useEffect(() => {
+    if (!newMail) return setAuth(true);
     axios
       .get(`https://c443eaf7af5a8981.mokky.dev/results?name=${newMail}`)
       .then((res) => {
         setStat(res.data);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e);
+        navigate("/main");
+      });
   }, []);
   const clickOnBtn = () => {
     axios
@@ -31,7 +39,9 @@ const UserStatistic = () => {
         `https://c443eaf7af5a8981.mokky.dev/results/${currentIndexToDelete + 1}`
       )
       .then((res) => console.log("Удалено", res))
-      .catch((e) => console.log(e))
+      .catch((e) => {
+        console.log(e);
+      })
       .finally(() => {
         const arr = stat.filter((elem) => elem.id !== currentIndexToDelete + 1);
         setStat(arr);
@@ -57,6 +67,16 @@ const UserStatistic = () => {
             <p className={styles.itemTable3}>Правильных ответов</p>
             <p className={styles.itemTable4}>Дата прохождения</p>
           </div>
+          {isAuth && (
+            <div className={styles.notAuth}>
+              Нет данных. Скорее всего вы не зарегистрировались или не вошли в
+              аккаунт.
+              <Link className={styles.link} to={"/login"}>
+                Войти?
+              </Link>
+            </div>
+          )}
+
           {stat.map((item, indx) => (
             <div className={styles.itemTable} key={indx}>
               <p className={styles.itemTable1}>{indx + 1}</p>

@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
 import styles from "./CountDown.module.css";
-const CountDown = () => {
-  const [time, setTime] = useState(10);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime((prevTime) => prevTime - 1);
-      if (time == 0) {
-        return alert("Время вышло");
-      }
-    }, 1000);
+const CountDown = ({ giveSaveTime }) => {
+  const [seconds, setSeconds] = useState(0);
 
-    return () => clearInterval(timer);
-  }, []);
+  giveSaveTime(seconds);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((prevSeconds) => prevSeconds + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [seconds]);
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes.toString().padStart(2, "0")}:${seconds
+      .toString()
+      .padStart(2, "0")}`;
+  };
   return (
     <>
       <div className={styles.wrap}>
-        {time}
-        <p className={styles.circle}></p>
+        <p>{formatTime(seconds)}</p>
       </div>
     </>
   );

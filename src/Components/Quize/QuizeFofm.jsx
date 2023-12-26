@@ -19,6 +19,7 @@ const QuizeFofm = ({
   const [currentAnswersArr, setCurrentAnswersArr] = useState([]);
   const [currentDate, setCurrentDate] = useState("");
   const [preSelection, setPreSelection] = useState(null);
+  const [saveTime, setSaveTime] = useState(null);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -32,6 +33,9 @@ const QuizeFofm = ({
   }, []);
   const preSelectionFunc = (number) => {
     setPreSelection(number);
+  };
+  const giveSaveTime = (time) => {
+    setSaveTime(time);
   };
   const nextQuestionFunc = async () => {
     if (preSelection == null) return alert("выберите ответ");
@@ -58,6 +62,7 @@ const QuizeFofm = ({
           date: currentDate,
           correctCount,
           nameOfProg,
+          saveTime,
         })
         .catch((e) => console.log(e))
         .finally(() => {
@@ -73,6 +78,7 @@ const QuizeFofm = ({
         <QuizeTrain mainResult={mainResult} />
       ) : (
         <QuizeExam
+          giveSaveTime={giveSaveTime}
           mainResult={mainResult}
           countQuest={countQuest}
           preSelection={preSelection}

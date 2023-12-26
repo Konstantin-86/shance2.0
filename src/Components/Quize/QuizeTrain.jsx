@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { useSwipeable } from "react-swipeable";
 
@@ -14,15 +14,27 @@ const QuizeTrain = ({ mainResult }) => {
   const [filtredSearch, setFiltredSearch] = useState([]);
   const [showFiltredSearch, setShowFiltredSearch] = useState(false);
   const [goSearchItem, setGoSearchItem] = useState(false);
+  const [showEffect, setShowEffect] = useState(true);
+  const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
   const [goSearchArr, setGoSearchArr] = useState([]);
 
-  const showCorrectAnswer = (number) => {
-    setShowCorrectNumber(number);
+  const showCorrectAnswerFunc = () => {
+    setShowEffect(true);
+    setShowCorrectAnswer(!showCorrectAnswer);
   };
+
+  useEffect(() => {
+    if (showCorrectAnswer) setShowCorrectNumber(mainResult[countQuest].T5);
+  }, [countQuest, mainResult, showCorrectAnswer]);
+
   const nextQuestionFunc = () => {
+    setShowEffect(false);
     setGoSearchItem(false);
     setCountQuest(countQuest + 1);
     setShowCorrectNumber(null);
+    setTimeout(() => {
+      setShowEffect(true);
+    }, 100);
     // закончились вопросы
     if (mainResult.length - 1 == countQuest) {
       setEndOfQuestions(false);
@@ -30,9 +42,13 @@ const QuizeTrain = ({ mainResult }) => {
   };
   const prevQuestionFunc = () => {
     if (countQuest == 0) return setCountQuest(0);
+    setShowEffect(false);
     setGoSearchItem(false);
     setCountQuest(countQuest - 1);
     setShowCorrectNumber(null);
+    setTimeout(() => {
+      setShowEffect(true);
+    }, 100);
     // закончились вопросы
     if (mainResult.length - 1 == countQuest) {
       setEndOfQuestions(false);
@@ -115,18 +131,22 @@ const QuizeTrain = ({ mainResult }) => {
             </div>
             <div className={styles.nameOfProg}>Тренировка</div>
             <div
-              onClick={showCorrectAnswer}
-              className={styles.showCorrectAnswer}
+              onClick={showCorrectAnswerFunc}
+              className={
+                showCorrectAnswer
+                  ? styles.showCorrectAnswerOff
+                  : styles.showCorrectAnswerOn
+              }
             >
-              Показывать правильный ответ
+              {`${showCorrectAnswer ? "Скрыть" : "Показать"} правильный ответ`}
             </div>
             <MyBackButton />
             {goSearchItem ? (
               <div className={styles.itemBox}>
-                <div className={styles.Quest}>{goSearchArr.NAMEB}</div>
+                <div className={styles.questShow}>{goSearchArr.NAMEB}</div>
                 <div
                   className={styles.answerItem}
-                  onClick={() => showCorrectAnswer(1)}
+                  onClick={() => showCorrectAnswerFunc}
                 >
                   {goSearchArr.OTV1}
                 </div>
@@ -168,24 +188,32 @@ const QuizeTrain = ({ mainResult }) => {
               </div>
             ) : (
               <div className={styles.itemBox}>
-                <div className={styles.Quest}>
+                <div
+                  className={showEffect ? styles.questShow : styles.questHide}
+                >
                   {mainResult[countQuest].NAMEB}
                 </div>
                 <div
-                  className={styles.answerItem}
-                  onClick={() => showCorrectAnswer(1)}
+                  className={
+                    showEffect ? styles.answerItemShow : styles.answerItemHide
+                  }
+                  onClick={showCorrectAnswerFunc}
                 >
                   {mainResult[countQuest].OTV1}
                 </div>
                 <div
-                  className={styles.answerItem}
+                  className={
+                    showEffect ? styles.answerItemShow : styles.answerItemHide
+                  }
                   onClick={() => showCorrectAnswer(2)}
                 >
                   {mainResult[countQuest].OTV2}
                 </div>
                 {mainResult[countQuest].OTV3 && (
                   <div
-                    className={styles.answerItem}
+                    className={
+                      showEffect ? styles.answerItemShow : styles.answerItemHide
+                    }
                     onClick={() => showCorrectAnswer(3)}
                   >
                     {mainResult[countQuest].OTV3}
@@ -193,7 +221,9 @@ const QuizeTrain = ({ mainResult }) => {
                 )}
                 {mainResult[countQuest].OTV4 && (
                   <div
-                    className={styles.answerItem}
+                    className={
+                      showEffect ? styles.answerItemShow : styles.answerItemHide
+                    }
                     onClick={() => showCorrectAnswer(4)}
                   >
                     {mainResult[countQuest].OTV4}
@@ -201,14 +231,22 @@ const QuizeTrain = ({ mainResult }) => {
                 )}
                 {mainResult[countQuest].OTV5 && (
                   <div
-                    className={styles.answerItem}
+                    className={
+                      showEffect ? styles.answerItemShow : styles.answerItemHide
+                    }
                     onClick={() => showCorrectAnswer(5)}
                   >
                     {mainResult[countQuest].OTV5}
                   </div>
                 )}
                 {showCorrectNumber && (
-                  <div className={styles.correctAnswer}>
+                  <div
+                    className={
+                      showEffect
+                        ? styles.correctAnswer
+                        : styles.correctAnswerHide
+                    }
+                  >
                     Правильный ответ № {mainResult[countQuest].T5}
                   </div>
                 )}

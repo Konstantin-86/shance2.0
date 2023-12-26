@@ -8,18 +8,20 @@ import QuizeResult from "./QuizeResult";
 import MyButton from "../UI/MyButton";
 
 const Quize = () => {
-  const local = useLocation();
-  const numberProf = local.state.numberProf;
-  const mode = local.state.stateRadioBtn;
-  const checked = local.state.checked;
-  const newMail = local.state.newMail;
-  const nameOfProg = local.state.age;
   const [mainResult, setMainResult] = useState([]);
   const [arrForResult, setArrForResult] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [correctAnswrNumber, setCorrectAnswrNumber] = useState(0);
+
+  const local = useLocation();
+
+  const numberProf = local.state.numberProf;
+  const mode = local.state.stateRadioBtn;
+  const checked = local.state.checked;
+  const newMail = local.state.newMail;
+  const nameOfProg = local.state.age;
 
   useEffect(() => {
     axios
@@ -61,6 +63,7 @@ const Quize = () => {
         }, 2000);
       });
   }, []);
+
   const correctAswrs = (arr) => {
     setArrForResult(arr);
   };
@@ -71,7 +74,12 @@ const Quize = () => {
           <h3>В стадии разработки...</h3>
           <p>
             Можете написать мне в{" "}
-            <a href="https://t.me/YakimtsevKonstantin">телеграмм</a>
+            <a
+              className={styles.myLink}
+              href="https://t.me/YakimtsevKonstantin"
+            >
+              телеграмм
+            </a>
           </p>
           <Link to={"/main"}>
             <MyButton>Назад</MyButton>

@@ -1,8 +1,3 @@
-import { useEffect, useState } from "react";
-
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase";
-
 import MyBackButton from "./UI/MyBackButton/MyBackButton";
 
 import styles from "../styles/UserProfile.module.css";
@@ -10,16 +5,6 @@ import styles from "../styles/UserProfile.module.css";
 import ava from "../assets/images/icons/profileAvatar.png";
 
 const UserProfile = () => {
-  const [userStat, setUserStat] = useState([]);
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUserStat(user);
-      } else {
-        console.log("user is logged out");
-      }
-    });
-  }, []);
   return (
     <>
       <div className={styles.innerUserProfile}>

@@ -15,6 +15,7 @@ import prog38 from "../DATA/PROGV038";
 import all from "../DATA/AllQuestions.json"; */
 
 import logo from "../assets/images/logo2.png";
+import UserNotAuth from "./User/UserNotAuth.jsx";
 
 const SecondPage = () => {
   const [newMail, setNewMail] = useState("");
@@ -24,8 +25,6 @@ const SecondPage = () => {
       if (user) {
         const email = user.email;
         setNewMail(email);
-      } else {
-        console.log("user is logged out");
       }
     });
   }, []);
@@ -70,19 +69,24 @@ const SecondPage = () => {
       <div className={styles.wrapPage}>
         <div className={styles.container}>
           {/*     <button onClick={show}>show</button> */}
+
           <div className={styles.InnerPage}>
             <img className={styles.logo} src={logo} alt="logo" />
-            {newMail && (
+            {newMail ? (
               <div>
                 <UserMenu newMail={newMail} setNewMail={setNewMail} />
               </div>
+            ) : (
+              <div>
+                <UserNotAuth></UserNotAuth>
+              </div>
             )}
           </div>
+
           <h3 className={styles.title}>
             Программа для проверки знаний по охране труда
           </h3>
-
-          {newMail && <MySelect newMail={newMail} />}
+          <MySelect newMail={newMail} />
         </div>
       </div>
     </div>
