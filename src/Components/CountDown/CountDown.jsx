@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "./CountDown.module.css";
-const CountDown = ({ giveSaveTime }) => {
+const CountDown = ({ mainResult, countQuest, giveSaveTime }) => {
   const [seconds, setSeconds] = useState(0);
 
-  giveSaveTime(seconds);
+  if (mainResult.length - 1 == countQuest) {
+    giveSaveTime(seconds);
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {

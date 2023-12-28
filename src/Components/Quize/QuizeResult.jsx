@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import styles from "../../styles/QuizeResult.module.css";
+import styles from "./styles/QuizeResult.module.css";
 
 import MyBackButton from "../UI/MyBackButton/MyBackButton";
-import MyButton from "../UI/MyButton";
+import MyButton from "../UI/MyButton/MyButton";
 
 import notbad from "../../assets/images/smailIcons/notBad.png";
 import bad from "../../assets/images/smailIcons/bad.png";

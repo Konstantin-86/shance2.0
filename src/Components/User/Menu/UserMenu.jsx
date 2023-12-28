@@ -5,7 +5,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import styles from "../styles/UserMenu.module.css";
+import styles from "./UserMenu.module.css";
 
 export default function UserMenu({ newMail, setNewMail }) {
   const auth = getAuth();

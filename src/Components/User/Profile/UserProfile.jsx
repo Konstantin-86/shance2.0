@@ -1,8 +1,8 @@
-import MyBackButton from "./UI/MyBackButton/MyBackButton";
+import MyBackButton from "../../UI/MyBackButton/MyBackButton";
 
-import styles from "../styles/UserProfile.module.css";
+import styles from "./UserProfile.module.css";
 
-import ava from "../assets/images/icons/profileAvatar.png";
+import ava from "../../../assets/images/icons/profileAvatar.png";
 
 const UserProfile = () => {
   return (
@@ -13,6 +13,7 @@ const UserProfile = () => {
             <img className={styles.avaImg} src={ava} alt="ava" />
           </div>
           <MyBackButton />
+
           <div>
             <p>
               Дата создания аккаунта {/* {userStat.metadata.creationTime} */}

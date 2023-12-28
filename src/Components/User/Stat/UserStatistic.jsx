@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 
-import { red, green } from "@mui/material/colors";
+import styles from "./UserStatistic.module.css";
 
-import styles from "../styles/UserStatistic.module.css";
+import deleteIcon from "../../../assets/images/icons/delete.png";
 
-import deleteIcon from "../assets/images/icons/delete.png";
-import { Button } from "@mui/material";
-import MyBackButton from "./UI/MyBackButton/MyBackButton";
+import MyBackButton from "../../UI/MyBackButton/MyBackButton";
+import MyButton from "../../UI/MyButton/MyButton";
 
 const UserStatistic = () => {
   const local = useLocation();
@@ -18,6 +17,7 @@ const UserStatistic = () => {
 
   const [stat, setStat] = useState([]);
   const [popUpBundle, setPopUpBundle] = useState(false);
+  const [currentIdToDelete, setCurrentIdToDelete] = useState(0);
   const [currentIndexToDelete, setCurrentIndexToDelete] = useState(0);
   const [isAuth, setAuth] = useState(false);
 
@@ -34,27 +34,34 @@ const UserStatistic = () => {
       });
   }, []);
   const clickOnBtn = () => {
+    setStat(stat.filter((_item, indx) => indx !== currentIndexToDelete));
+    setPopUpBundle(false);
     axios
-      .delete(
-        `https://c443eaf7af5a8981.mokky.dev/results/${currentIndexToDelete + 1}`
-      )
+      .delete(`https://c443eaf7af5a8981.mokky.dev/results/${currentIdToDelete}`)
       .then((res) => console.log("Удалено", res))
       .catch((e) => {
         console.log(e);
-      })
-      .finally(() => {
-        const arr = stat.filter((elem) => elem.id !== currentIndexToDelete + 1);
-        setStat(arr);
-        setPopUpBundle(false);
       });
   };
   const clickOnBtnOff = () => {
     setPopUpBundle(false);
   };
-  const clickOnDeleteButton = (indx) => {
+  const clickOnDeleteButton = (id, indx) => {
     setCurrentIndexToDelete(indx);
+    setCurrentIdToDelete(id);
     setPopUpBundle(true);
   };
+
+  stat.map((item) => {
+    if (item.saveTime > 60) {
+      const minutes = Math.floor(item.saveTime / 60);
+      let remainingSeconds = item.saveTime % 60;
+      if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;
+      }
+      return (item.saveTime = `${minutes}:${remainingSeconds}`);
+    }
+  });
   return (
     <div>
       <div className={styles.box}>
@@ -65,7 +72,8 @@ const UserStatistic = () => {
             <p className={styles.itemTable1}>№</p>
             <p className={styles.itemTable2}>Программа</p>
             <p className={styles.itemTable3}>Правильных ответов</p>
-            <p className={styles.itemTable4}>Дата прохождения</p>
+            <p className={styles.itemTable4}>Время прохождения</p>
+            <p className={styles.itemTable5}>Дата прохождения</p>
           </div>
           {isAuth && (
             <div className={styles.notAuth}>
@@ -76,17 +84,17 @@ const UserStatistic = () => {
               </Link>
             </div>
           )}
-
           {stat.map((item, indx) => (
             <div className={styles.itemTable} key={indx}>
               <p className={styles.itemTable1}>{indx + 1}</p>
               <p className={styles.itemTable2}>{item.nameOfProg}</p>
               <p className={styles.itemTable3}>{item.correctCount}</p>
-              <p className={styles.itemTable4}>
+              <p className={styles.itemTable4}>{item.saveTime}</p>
+              <p className={styles.itemTable5}>
                 {" "}
                 {item.date}
                 <img
-                  onClick={() => clickOnDeleteButton(indx)}
+                  onClick={() => clickOnDeleteButton(item.id, indx)}
                   className={styles.deleteIcon}
                   src={deleteIcon}
                   alt="deleteIcon"
@@ -105,20 +113,8 @@ const UserStatistic = () => {
             <h3>Вы точно хотите удалить запись?</h3>
             <div className={styles.ButtonsWrap}>
               {" "}
-              <Button
-                onClick={clickOnBtnOff}
-                sx={{ bgcolor: green[500] }}
-                variant="contained"
-              >
-                Нет
-              </Button>
-              <Button
-                onClick={clickOnBtn}
-                sx={{ bgcolor: red[500] }}
-                variant="contained"
-              >
-                Да
-              </Button>
+              <MyButton onClick={clickOnBtnOff}>Нет</MyButton>
+              <MyButton onClick={clickOnBtn}>Да</MyButton>
             </div>
           </div>
         </div>

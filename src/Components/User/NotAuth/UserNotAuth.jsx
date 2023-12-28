@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import styles from "./Styles/UserNotAuth.module.css";
+import styles from "./UserNotAuth.module.css";
 
 const UserNotAuth = () => {
   const [showInner, setShowInner] = useState(false);

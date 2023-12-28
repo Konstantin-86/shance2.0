@@ -37,13 +37,28 @@
   font-weight: 600;
   margin: 10px 0;
   margin-top: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0);
+  animation: showEffect;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes showEffect {
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10px);
+  }
 }
 .itemActive {
+  cursor: pointer;
   padding: 5px;
   background-color: #7f70d8;
   border-radius: 7px;
 }
 .item {
+  cursor: pointer;
   padding: 5px;
   border-radius: 7px;
 }

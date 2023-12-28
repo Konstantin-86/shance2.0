@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../../firebase";
 import { NavLink, useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import styles from "../styles/Login.module.css";
+import styles from "./Login.module.css";
 
 const defaultTheme = createTheme();
 
@@ -28,11 +28,8 @@ const Login = () => {
     setPassword(data.get("password"));
 
     await signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
+      .then(() => {
         navigate("/main");
-        console.log(user);
       })
       .catch((error) => {
         console.log(auth);

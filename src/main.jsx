@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App.jsx";
-import ErrorPage from "./Components/ErrorPage.jsx";
+import ErrorPage from "./Components/Auth/ErrorPage.jsx";
 import SecondPage from "./Components/SecondPage.jsx";
-import Login from "./Components/Login.jsx";
-import Signup from "./Components/Signup.jsx";
+import Login from "./Components/Auth/SingIn/Login.jsx";
+import Signup from "./Components/Auth/SingUp/Signup.jsx";
 
 import "./styles/main.css";
-import UserProfile from "./Components/UserProfile.jsx";
-import UserStatistic from "./Components/UserStatistic.jsx";
+import UserProfile from "./Components/User/Profile/UserProfile.jsx";
+import UserStatistic from "./Components/User/Stat/UserStatistic.jsx";
 import Quize from "./Components/Quize/Quize.jsx";
 
 const router = createBrowserRouter([

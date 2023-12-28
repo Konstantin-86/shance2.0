@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 
-import styles from "../../styles/Quize.module.css";
+import styles from "./styles/Quize.module.css";
 import QuizeFofm from "./QuizeFofm";
 import QuizeResult from "./QuizeResult";
-import MyButton from "../UI/MyButton";
+import MyButton from "../UI/MyButton/MyButton";
 
 const Quize = () => {
   const [mainResult, setMainResult] = useState([]);
@@ -69,55 +69,57 @@ const Quize = () => {
   };
   return (
     <div>
-      <div className={styles.container}>
-        <div className={error ? styles.errorShow : styles.errorHide}>
-          <h3>В стадии разработки...</h3>
-          <p>
-            Можете написать мне в{" "}
-            <a
-              className={styles.myLink}
-              href="https://t.me/YakimtsevKonstantin"
-            >
-              телеграмм
-            </a>
-          </p>
-          <Link to={"/main"}>
-            <MyButton>Назад</MyButton>
-          </Link>
-        </div>
+      <div className={styles.inner}>
+        <div className={styles.container}>
+          <div className={error ? styles.errorShow : styles.errorHide}>
+            <h3>В стадии разработки...</h3>
+            <p>
+              Можете написать мне в{" "}
+              <a
+                className={styles.myLink}
+                href="https://t.me/YakimtsevKonstantin"
+              >
+                телеграмм
+              </a>
+            </p>
+            <Link to={"/main"}>
+              <MyButton>Назад</MyButton>
+            </Link>
+          </div>
 
-        {isLoading ? (
-          <div>
-            <div
-              className={
-                showResult ? styles.InnerLoaderHide : styles.InnerLoader
-              }
-            >
-              {" "}
-              <span className={styles.loader}></span>
+          {isLoading ? (
+            <div>
+              <div
+                className={
+                  showResult ? styles.InnerLoaderHide : styles.InnerLoader
+                }
+              >
+                {" "}
+                <span className={styles.loader}></span>
+              </div>
             </div>
-          </div>
-        ) : (
-          <QuizeFofm
-            correctAswrs={correctAswrs}
-            newMail={newMail}
-            mainResult={mainResult}
-            setLoading={setLoading}
-            nameOfProg={nameOfProg}
-            setShowResult={setShowResult}
-            setCorrectAnswrNumber={setCorrectAnswrNumber}
-            mode={mode}
-          ></QuizeFofm>
-        )}
-        {showResult && (
-          <div className={styles.resultInner}>
-            <QuizeResult
-              arrForResult={arrForResult}
-              correctAnswrNumber={correctAnswrNumber}
+          ) : (
+            <QuizeFofm
+              correctAswrs={correctAswrs}
               newMail={newMail}
-            />
-          </div>
-        )}
+              mainResult={mainResult}
+              setLoading={setLoading}
+              nameOfProg={nameOfProg}
+              setShowResult={setShowResult}
+              setCorrectAnswrNumber={setCorrectAnswrNumber}
+              mode={mode}
+            ></QuizeFofm>
+          )}
+          {showResult && (
+            <div className={styles.resultInner}>
+              <QuizeResult
+                arrForResult={arrForResult}
+                correctAnswrNumber={correctAnswrNumber}
+                newMail={newMail}
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

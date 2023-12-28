@@ -1,7 +1,7 @@
 import { useState } from "react";
-import styles from "../../styles/MyRadioBtn.module.css";
+import styles from "./Switch.module.css";
 
-const MyRadioBtn = ({ children, setChecked, checked }) => {
+const Switch = ({ children, setChecked, checked }) => {
   const [switchToogle, setSwitchToogle] = useState(true);
 
   const switchBundle = (e) => {
@@ -35,4 +35,4 @@ const MyRadioBtn = ({ children, setChecked, checked }) => {
   );
 };
 
-export default MyRadioBtn;
+export default Switch;

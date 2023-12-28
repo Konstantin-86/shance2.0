@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 
-import MyButton from "./MyButton";
-import MyRadioBtn from "./MyRadioBtn";
+import MyButton from "../MyButton/MyButton";
+import Switch from "../Switch/Switch";
 
-import AllProf from "../../DATA/AllProf.json";
+import AllProf from "../../../DATA/AllProf.json";
 import { useNavigate } from "react-router-dom";
 
-import styles from "../../styles/MySelect.module.css";
+import styles from "./MySelect.module.css";
 
-import arrow from "../../assets/images/icons/arrow.png";
-import ok from "../../assets/images/icons/OKgreen.png";
+import arrow from "../../../assets/images/icons/arrow.png";
+import ok from "../../../assets/images/icons/OKgreen.png";
 
 export default function MySelect({ newMail }) {
   const navigate = useNavigate();
@@ -154,9 +154,9 @@ export default function MySelect({ newMail }) {
                 : styles.swicherInnerHide
             }
           >
-            <MyRadioBtn checked={checked} setChecked={setChecked}>
+            <Switch checked={checked} setChecked={setChecked}>
               Перемешать вопросы?
-            </MyRadioBtn>
+            </Switch>
           </div>
           <div className={styles.buttonWrap}>
             <MyButton onClick={goQuizze}>запустить</MyButton>

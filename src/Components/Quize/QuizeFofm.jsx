@@ -20,6 +20,7 @@ const QuizeFofm = ({
   const [currentDate, setCurrentDate] = useState("");
   const [preSelection, setPreSelection] = useState(null);
   const [saveTime, setSaveTime] = useState(null);
+  const [showEffect, setShowEffect] = useState(true);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -39,6 +40,7 @@ const QuizeFofm = ({
   };
   const nextQuestionFunc = async () => {
     if (preSelection == null) return alert("выберите ответ");
+    setShowEffect(false);
     //массив вопрос + ответ
     let newArr = [...currentAnswersArr, mainResult[countQuest]];
     newArr[countQuest].personResponse = preSelection;
@@ -56,19 +58,24 @@ const QuizeFofm = ({
       setShowResult(true);
       let newArr = [...currentAnswersArr, mainResult[countQuest]];
       newArr[countQuest].personResponse = preSelection;
-      await axios
-        .post("https://c443eaf7af5a8981.mokky.dev/results", {
-          name: newMail,
-          date: currentDate,
-          correctCount,
-          nameOfProg,
-          saveTime,
-        })
-        .catch((e) => console.log(e))
-        .finally(() => {
-          correctAswrs(newArr);
-        });
+      if (!newMail == "") {
+        await axios
+          .post("https://c443eaf7af5a8981.mokky.dev/results", {
+            name: newMail,
+            date: currentDate,
+            correctCount,
+            nameOfProg,
+            saveTime,
+          })
+          .catch((e) => console.log(e))
+          .finally(() => {
+            correctAswrs(newArr);
+          });
+      }
     } else {
+      setTimeout(() => {
+        setShowEffect(true);
+      }, 300);
       setCountQuest(countQuest + 1);
     }
   };
@@ -84,6 +91,7 @@ const QuizeFofm = ({
           preSelection={preSelection}
           preSelectionFunc={preSelectionFunc}
           nextQuestionFunc={nextQuestionFunc}
+          showEffect={showEffect}
         />
       )}
     </>

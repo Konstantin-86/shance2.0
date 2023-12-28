@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 
 import { useSwipeable } from "react-swipeable";
 
-import styles from "../../styles/QuizeTrain.module.css";
-import MyButton from "../UI/MyButton";
+import styles from "./styles/QuizeTrain.module.css";
+import MyButton from "../UI/MyButton/MyButton";
 import MyBackButton from "../UI/MyBackButton/MyBackButton";
 
 const QuizeTrain = ({ mainResult }) => {
@@ -152,14 +152,14 @@ const QuizeTrain = ({ mainResult }) => {
                 </div>
                 <div
                   className={styles.answerItem}
-                  onClick={() => showCorrectAnswer(2)}
+                  onClick={() => showCorrectAnswerFunc}
                 >
                   {goSearchArr.OTV2}
                 </div>
                 {goSearchArr.OTV3 && (
                   <div
                     className={styles.answerItem}
-                    onClick={() => showCorrectAnswer(3)}
+                    onClick={() => showCorrectAnswerFunc}
                   >
                     {goSearchArr.OTV3}
                   </div>
@@ -167,7 +167,7 @@ const QuizeTrain = ({ mainResult }) => {
                 {goSearchArr.OTV4 && (
                   <div
                     className={styles.answerItem}
-                    onClick={() => showCorrectAnswer(4)}
+                    onClick={() => showCorrectAnswerFunc}
                   >
                     {goSearchArr.OTV4}
                   </div>
@@ -175,7 +175,7 @@ const QuizeTrain = ({ mainResult }) => {
                 {goSearchArr.OTV5 && (
                   <div
                     className={styles.answerItem}
-                    onClick={() => showCorrectAnswer(5)}
+                    onClick={() => showCorrectAnswerFunc}
                   >
                     {goSearchArr.OTV5}
                   </div>
@@ -205,7 +205,7 @@ const QuizeTrain = ({ mainResult }) => {
                   className={
                     showEffect ? styles.answerItemShow : styles.answerItemHide
                   }
-                  onClick={() => showCorrectAnswer(2)}
+                  onClick={() => showCorrectAnswerFunc}
                 >
                   {mainResult[countQuest].OTV2}
                 </div>
@@ -214,7 +214,7 @@ const QuizeTrain = ({ mainResult }) => {
                     className={
                       showEffect ? styles.answerItemShow : styles.answerItemHide
                     }
-                    onClick={() => showCorrectAnswer(3)}
+                    onClick={() => showCorrectAnswerFunc}
                   >
                     {mainResult[countQuest].OTV3}
                   </div>
@@ -224,7 +224,7 @@ const QuizeTrain = ({ mainResult }) => {
                     className={
                       showEffect ? styles.answerItemShow : styles.answerItemHide
                     }
-                    onClick={() => showCorrectAnswer(4)}
+                    onClick={() => showCorrectAnswerFunc}
                   >
                     {mainResult[countQuest].OTV4}
                   </div>
@@ -234,7 +234,7 @@ const QuizeTrain = ({ mainResult }) => {
                     className={
                       showEffect ? styles.answerItemShow : styles.answerItemHide
                     }
-                    onClick={() => showCorrectAnswer(5)}
+                    onClick={() => showCorrectAnswerFunc}
                   >
                     {mainResult[countQuest].OTV5}
                   </div>
