@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
+
 import axios from "axios";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+
+import MyBackButton from "../../UI/MyBackButton/MyBackButton";
+import MyButton from "../../UI/MyButton/MyButton";
 
 import styles from "./UserStatistic.module.css";
 
 import deleteIcon from "../../../assets/images/icons/delete.png";
 
-import MyBackButton from "../../UI/MyBackButton/MyBackButton";
-import MyButton from "../../UI/MyButton/MyButton";
-
 const UserStatistic = () => {
   const local = useLocation();
-  const newMail = local.state.newMail;
-
-  const navigate = useNavigate();
-
   const [stat, setStat] = useState([]);
   const [popUpBundle, setPopUpBundle] = useState(false);
   const [currentIdToDelete, setCurrentIdToDelete] = useState(0);
@@ -22,7 +19,9 @@ const UserStatistic = () => {
   const [isAuth, setAuth] = useState(false);
 
   useEffect(() => {
-    if (!newMail) return setAuth(true);
+    if (local.state == null) return setAuth(true);
+    const newMail = local.state.newMail;
+
     axios
       .get(`https://c443eaf7af5a8981.mokky.dev/results?name=${newMail}`)
       .then((res) => {
@@ -30,7 +29,6 @@ const UserStatistic = () => {
       })
       .catch((e) => {
         console.log(e);
-        navigate("/main");
       });
   }, []);
   const clickOnBtn = () => {

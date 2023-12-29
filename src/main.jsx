@@ -42,6 +42,8 @@ const router = createBrowserRouter([
         <UserStatistic></UserStatistic>
       </div>
     ),
+
+    errorElement: <ErrorPage />,
   },
   {
     path: "main/userprofile",

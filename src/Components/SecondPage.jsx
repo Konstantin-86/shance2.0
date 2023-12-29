@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
+import { MyContextEmail } from "./UseContxt/MyContext.js";
 
 /* import axios from "axios"; */
 
@@ -49,7 +50,7 @@ const SecondPage = () => {
       .catch((e) => console.log(e));
   }; */
   return (
-    <div>
+    <MyContextEmail.Provider value={{ newContxt: newMail }}>
       <div className={styles.wrapPage}>
         <div className={styles.container}>
           {/* <button onClick={show}>show</button> */}
@@ -73,7 +74,7 @@ const SecondPage = () => {
           <MySelect newMail={newMail} />
         </div>
       </div>
-    </div>
+    </MyContextEmail.Provider>
   );
 };
 
