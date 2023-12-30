@@ -72,6 +72,7 @@ const UserStatistic = () => {
             <p className={styles.itemTable3}>Правильных ответов</p>
             <p className={styles.itemTable4}>Время прохождения</p>
             <p className={styles.itemTable5}>Дата прохождения</p>
+            <p className={styles.itemTable6}> </p>
           </div>
           {isAuth && (
             <div className={styles.notAuth}>
@@ -88,9 +89,9 @@ const UserStatistic = () => {
               <p className={styles.itemTable2}>{item.nameOfProg}</p>
               <p className={styles.itemTable3}>{item.correctCount}</p>
               <p className={styles.itemTable4}>{item.saveTime}</p>
-              <p className={styles.itemTable5}>
+              <p className={styles.itemTable5}> {item.date}</p>
+              <p className={styles.itemTable6}>
                 {" "}
-                {item.date}
                 <img
                   onClick={() => clickOnDeleteButton(item.id, indx)}
                   className={styles.deleteIcon}

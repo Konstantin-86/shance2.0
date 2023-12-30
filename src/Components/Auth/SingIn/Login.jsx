@@ -29,7 +29,7 @@ const Login = () => {
 
     await signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate("/");
+        navigate("/main");
       })
       .catch((error) => {
         console.log(auth);
