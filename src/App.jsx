@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        navigate("/main");
+        navigate("/");
       } else {
         navigate("/");
         setTimeout(() => {

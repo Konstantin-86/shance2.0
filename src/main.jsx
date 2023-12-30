@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "main/",
+    path: "https://shance-sigma.vercel.app/main/",
     element: (
       <div>
         <SecondPage></SecondPage>

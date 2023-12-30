@@ -53,17 +53,27 @@ const QuizeFofm = ({
     }
     // закончились вопросы
     if (mainResult.length - 1 == countQuest) {
-      setCorrectAnswrNumber(correctCount);
+      if (mainResult[countQuest].T5 == preSelection) {
+        setCorrectAnswrNumber(correctCount + 1);
+      } else {
+        setCorrectAnswrNumber(correctCount);
+      }
+
       setLoading(true);
       setShowResult(true);
       let newArr = [...currentAnswersArr, mainResult[countQuest]];
       newArr[countQuest].personResponse = preSelection;
       if (!newMail == "") {
+        let rightNumber = correctCount;
+        if (mainResult[countQuest].T5 == preSelection) {
+          rightNumber = correctCount + 1;
+        }
+        console.log(rightNumber);
         await axios
           .post("https://c443eaf7af5a8981.mokky.dev/results", {
             name: newMail,
             date: currentDate,
-            correctCount,
+            correctCount: rightNumber,
             nameOfProg,
             saveTime,
           })
