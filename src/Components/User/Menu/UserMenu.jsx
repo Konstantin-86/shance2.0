@@ -7,9 +7,17 @@ import { Link } from "react-router-dom";
 
 import styles from "./UserMenu.module.css";
 
-export default function UserMenu({ newMail, setNewMail }) {
+export default function UserMenu({
+  newMail,
+  setNewMail,
+  creationAccauntDate,
+  lastSignInAcc,
+  emailIsVerified,
+}) {
   const auth = getAuth();
   const navigate = useNavigate();
+  /*const [creacteAcountDate, setCreacteAcountDate] = useState("");
+    setCreacteAcountDate(userData.metadata.creationTime); */
 
   const [showPopUp, setShowPopUp] = useState(false);
 
@@ -19,11 +27,11 @@ export default function UserMenu({ newMail, setNewMail }) {
     });
   };
 
-  /*  const profileFunc = () => {
-    navigate1("/main/userprofile", {
-      state: { userStat },
+  const profileFunc = () => {
+    navigate("/main/userprofile", {
+      state: { newMail, creationAccauntDate, lastSignInAcc, emailIsVerified },
     });
-  }; */
+  };
   const logOutFunc = () => {
     signOut(auth)
       .then(() => {
@@ -32,9 +40,6 @@ export default function UserMenu({ newMail, setNewMail }) {
       })
       .catch((error) => {
         console.log(error);
-      })
-      .finally(() => {
-        navigate("/");
       });
   };
   const FirstLetter = newMail.slice(0, 1);
@@ -66,8 +71,14 @@ export default function UserMenu({ newMail, setNewMail }) {
           className={showPopUp ? styles.avaPopUpActive : styles.avaPopUpHide}
         >
           <ul>
-            <li /* onClick={profileFunc} */ className={styles.avaItem}>
-              <Link to={"/main/userprofile"}>Профиль</Link>
+            <li onClick={profileFunc} className={styles.avaItem}>
+              <Link
+                to={{
+                  pathname: "/main/userprofile",
+                  state: { /* newMail: newMail, */ name: "konst" },
+                }}
+              ></Link>
+              Профиль
             </li>
             <li onClick={starUserFunc} className={styles.avaItem}>
               Статистика

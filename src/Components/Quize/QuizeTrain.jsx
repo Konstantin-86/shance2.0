@@ -83,17 +83,11 @@ const QuizeTrain = ({ mainResult }) => {
     },
   });
 
-  // setup ref for your usage
   const myRef = useRef();
-
   const refPassthrough = (el) => {
-    // call useSwipeable ref prop with el
     handlers.ref(el);
-
-    // set myRef el so you can access it yourself
     myRef.current = el;
   };
-  /* const showCorrectAnswer = () => {}; */
   return (
     <div>
       <div {...handlers} ref={refPassthrough} className={styles.mainContainer}>
@@ -102,6 +96,7 @@ const QuizeTrain = ({ mainResult }) => {
             <div className={styles.numberOfQuestion}>
               {countQuest + 1} / <br /> {mainResult.length}
             </div>
+
             <div className={styles.search}>
               <input
                 className={styles.inpt}
@@ -129,6 +124,7 @@ const QuizeTrain = ({ mainResult }) => {
                 ))}
               </div>
             </div>
+
             <div className={styles.nameOfProg}>Тренировка</div>
             <div
               onClick={showCorrectAnswerFunc}
@@ -140,45 +136,22 @@ const QuizeTrain = ({ mainResult }) => {
             >
               {`${showCorrectAnswer ? "Скрыть" : "Показать"} правильный ответ`}
             </div>
+
             <MyBackButton />
+
             {goSearchItem ? (
               <div className={styles.itemBox}>
                 <div className={styles.questShow}>{goSearchArr.NAMEB}</div>
-                <div
-                  className={styles.answerItem}
-                  onClick={() => showCorrectAnswerFunc}
-                >
-                  {goSearchArr.OTV1}
-                </div>
-                <div
-                  className={styles.answerItem}
-                  onClick={() => showCorrectAnswerFunc}
-                >
-                  {goSearchArr.OTV2}
-                </div>
+                <div className={styles.answerItem}>{goSearchArr.OTV1}</div>
+                <div className={styles.answerItem}>{goSearchArr.OTV2}</div>
                 {goSearchArr.OTV3 && (
-                  <div
-                    className={styles.answerItem}
-                    onClick={() => showCorrectAnswerFunc}
-                  >
-                    {goSearchArr.OTV3}
-                  </div>
+                  <div className={styles.answerItem}>{goSearchArr.OTV3}</div>
                 )}
                 {goSearchArr.OTV4 && (
-                  <div
-                    className={styles.answerItem}
-                    onClick={() => showCorrectAnswerFunc}
-                  >
-                    {goSearchArr.OTV4}
-                  </div>
+                  <div className={styles.answerItem}>{goSearchArr.OTV4}</div>
                 )}
                 {goSearchArr.OTV5 && (
-                  <div
-                    className={styles.answerItem}
-                    onClick={() => showCorrectAnswerFunc}
-                  >
-                    {goSearchArr.OTV5}
-                  </div>
+                  <div className={styles.answerItem}>{goSearchArr.OTV5}</div>
                 )}
                 {showCorrectNumber && (
                   <div className={styles.correctAnswer}>
@@ -197,7 +170,6 @@ const QuizeTrain = ({ mainResult }) => {
                   className={
                     showEffect ? styles.answerItemShow : styles.answerItemHide
                   }
-                  onClick={showCorrectAnswerFunc}
                 >
                   {mainResult[countQuest].OTV1}
                 </div>
@@ -205,7 +177,6 @@ const QuizeTrain = ({ mainResult }) => {
                   className={
                     showEffect ? styles.answerItemShow : styles.answerItemHide
                   }
-                  onClick={() => showCorrectAnswerFunc}
                 >
                   {mainResult[countQuest].OTV2}
                 </div>
@@ -214,7 +185,6 @@ const QuizeTrain = ({ mainResult }) => {
                     className={
                       showEffect ? styles.answerItemShow : styles.answerItemHide
                     }
-                    onClick={() => showCorrectAnswerFunc}
                   >
                     {mainResult[countQuest].OTV3}
                   </div>
@@ -224,7 +194,6 @@ const QuizeTrain = ({ mainResult }) => {
                     className={
                       showEffect ? styles.answerItemShow : styles.answerItemHide
                     }
-                    onClick={() => showCorrectAnswerFunc}
                   >
                     {mainResult[countQuest].OTV4}
                   </div>
@@ -234,7 +203,6 @@ const QuizeTrain = ({ mainResult }) => {
                     className={
                       showEffect ? styles.answerItemShow : styles.answerItemHide
                     }
-                    onClick={() => showCorrectAnswerFunc}
                   >
                     {mainResult[countQuest].OTV5}
                   </div>

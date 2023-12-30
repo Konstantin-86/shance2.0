@@ -18,10 +18,16 @@ import UserNotAuth from "../Components/User/NotAuth/UserNotAuth.jsx";
 
 const SecondPage = () => {
   const [newMail, setNewMail] = useState("");
+  const [creationAccauntDate, seCreationAccauntDate] = useState("");
+  const [lastSignInAcc, setLastSignInAcc] = useState("");
+  const [emailIsVerified, seEmailIsVerified] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        seCreationAccauntDate(user.metadata.creationTime);
+        setLastSignInAcc(user.metadata.lastSignInTime);
+        seEmailIsVerified(user.emailVerified);
         const email = user.email;
         setNewMail(email);
       }
@@ -59,7 +65,13 @@ const SecondPage = () => {
             <img className={styles.logo} src={logo} alt="logo" />
             {newMail ? (
               <div>
-                <UserMenu newMail={newMail} setNewMail={setNewMail} />
+                <UserMenu
+                  creationAccauntDate={creationAccauntDate}
+                  lastSignInAcc={lastSignInAcc}
+                  emailIsVerified={emailIsVerified}
+                  newMail={newMail}
+                  setNewMail={setNewMail}
+                />
               </div>
             ) : (
               <div>
