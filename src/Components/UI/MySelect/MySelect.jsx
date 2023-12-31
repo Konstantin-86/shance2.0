@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import MyButton from "../MyButton/MyButton";
 import Switch from "../Switch/Switch";
@@ -10,7 +10,6 @@ import styles from "./MySelect.module.css";
 
 import arrow from "../../../assets/images/icons/arrow.png";
 import ok from "../../../assets/images/icons/OKgreen.png";
-import { MyContextEmail } from "../../UseContxt/MyContext";
 
 export default function MySelect({ newMail }) {
   const navigate = useNavigate();

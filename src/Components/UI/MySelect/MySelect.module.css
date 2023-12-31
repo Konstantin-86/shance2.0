@@ -232,9 +232,10 @@
   transition: all 0.4s;
 }
 .buttonWrap {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%);
 }
 .innerRadioBtns {
   margin-top: 20px;

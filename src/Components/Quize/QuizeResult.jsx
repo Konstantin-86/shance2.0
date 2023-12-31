@@ -105,6 +105,7 @@ const QuizeResult = ({ newMail, arrForResult, correctAnswrNumber }) => {
       <div className={styles.container}>
         <div className={styles.box}>
           <MyBackButton />
+          <button>Заново</button>
           {/* <Link to={"/main/quize"}>
             <div className={styles.refreshButton}>Заново</div>
           </Link> */}
