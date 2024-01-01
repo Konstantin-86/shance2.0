@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "./Login.module.css";
 
@@ -13,7 +13,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [handleError, setHandleError] = useState(false);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     await signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         navigate("/main");
@@ -41,37 +42,40 @@ const Login = () => {
         </div>
         <div className={styles.contentBox}>
           <img className={styles.loginImg} src={login} alt="login" />
-          <div className={styles.innerLogin}>
-            <input
-              className={email ? styles.loginInpt : styles.loginInptEmpty}
-              id="mail"
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="mail">Почта *</label>
-          </div>
-          <div className={styles.innerLogin}>
-            {" "}
-            <input
-              className={
-                password ? styles.loginInptPass : styles.loginInptPassEmpty
-              }
-              type="text"
-              value={password}
-              id="pass"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <label htmlFor="pass">Пароль *</label>
-          </div>
+          <form>
+            <div className={styles.innerLogin}>
+              <input
+                className={email ? styles.loginInpt : styles.loginInptEmpty}
+                id="mail"
+                type="text"
+                value={email}
+                autoFocus
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor="mail">Почта *</label>
+            </div>
+            <div className={styles.innerLogin}>
+              {" "}
+              <input
+                className={
+                  password ? styles.loginInptPass : styles.loginInptPassEmpty
+                }
+                type="text"
+                value={password}
+                id="pass"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label htmlFor="pass">Пароль *</label>
+            </div>
 
-          <button className={styles.signInButton} onClick={handleSubmit}>
-            ВОЙТИ
-          </button>
+            <button className={styles.signInButton} onClick={handleSubmit}>
+              ВОЙТИ
+            </button>
+          </form>
         </div>
 
         <p className={styles.text}>
-          Нет аккаунта? <NavLink to="/signup">Зарегистрироваться</NavLink>
+          Нет аккаунта? <Link to="/signup">Зарегистрироваться</Link>
         </p>
       </div>
     </>

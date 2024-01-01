@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import styles from "./styles/Quize.module.css";
 import QuizeFofm from "./QuizeFofm";
 import QuizeResult from "./QuizeResult";
-import MyButton from "../UI/MyButton/MyButton";
+import MyBackButton from "../UI/MyBackButton/MyBackButton";
 
 const Quize = () => {
   const [mainResult, setMainResult] = useState([]);
@@ -72,19 +72,19 @@ const Quize = () => {
       <div className={styles.inner}>
         <div className={styles.container}>
           <div className={error ? styles.errorShow : styles.errorHide}>
-            <h3>В стадии разработки...</h3>
-            <p>
-              Можете написать мне в{" "}
-              <a
-                className={styles.myLink}
-                href="https://t.me/YakimtsevKonstantin"
-              >
-                телеграмм
-              </a>
-            </p>
-            <Link to={"/main"}>
-              <MyButton>Назад</MyButton>
-            </Link>
+            <div className={styles.errorDev}>
+              <h3 className={styles.errorDevTitle}>В стадии разработки...</h3>
+              <p className={styles.errorDevText}>
+                Можете написать мне в{" "}
+                <a
+                  className={styles.myLink}
+                  href="https://t.me/YakimtsevKonstantin"
+                >
+                  телеграмм
+                </a>
+              </p>
+              <MyBackButton />
+            </div>
           </div>
 
           {isLoading ? (

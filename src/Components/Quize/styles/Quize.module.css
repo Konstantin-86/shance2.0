@@ -21,6 +21,15 @@
   visibility: visible;
   transition: all 0.5s;
 }
+.errorDevTitle {
+  margin-top: 40px;
+  text-align: center;
+}
+.errorDevText {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
 .myLink {
   border-bottom: 1px solid rgb(52, 52, 218);
 }
