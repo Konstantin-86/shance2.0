@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 
 import MyButton from "../UI/MyButton/MyButton";
+import MyBackButton from "../UI/MyBackButton/MyBackButton";
 import styles from "./styles/QuizeExam.module.css";
 import CountDown from "../CountDown/CountDown";
 
@@ -13,6 +14,7 @@ const QuizeExam = ({
   nextQuestionFunc,
   showEffect,
   giveSaveTime,
+  showAlert,
 }) => {
   const handlers = useSwipeable({
     onSwiped: ({ dir }) => {
@@ -30,9 +32,15 @@ const QuizeExam = ({
   return (
     <div>
       <div className={styles.box}>
-        <div {...handlers} ref={refPassthrough} className={styles.trainWrap}>
+        <div {...handlers} ref={refPassthrough} className={styles.ezamWrap}>
+          <MyBackButton />
           <div className={styles.numberOfQuestion}>
-            {countQuest + 1} / <br /> {mainResult.length}
+            {countQuest + 1} / {mainResult.length}
+          </div>
+          <div
+            className={showAlert ? styles.noAnswerActive : styles.noAnswerHide}
+          >
+            Выберите ответ
           </div>
           <CountDown
             mainResult={mainResult}

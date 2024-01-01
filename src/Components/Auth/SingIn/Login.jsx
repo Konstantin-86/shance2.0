@@ -2,18 +2,10 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { NavLink, useNavigate } from "react-router-dom";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import styles from "./Login.module.css";
 
-const defaultTheme = createTheme();
+import login from "../../../assets/images/icons/login.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,12 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [handleError, setHandleError] = useState(false);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    setEmail(data.get("email"));
-    setPassword(data.get("password"));
-
+  const handleSubmit = async () => {
     await signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         navigate("/main");
@@ -52,60 +39,37 @@ const Login = () => {
         >
           Ошибка логина или пароля
         </div>
+        <div className={styles.contentBox}>
+          <img className={styles.loginImg} src={login} alt="login" />
+          <div className={styles.innerLogin}>
+            <input
+              className={email ? styles.loginInpt : styles.loginInptEmpty}
+              id="mail"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label htmlFor="mail">Почта *</label>
+          </div>
+          <div className={styles.innerLogin}>
+            {" "}
+            <input
+              className={
+                password ? styles.loginInptPass : styles.loginInptPassEmpty
+              }
+              type="text"
+              value={password}
+              id="pass"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label htmlFor="pass">Пароль *</label>
+          </div>
 
-        <ThemeProvider theme={defaultTheme}>
-          <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <Box
-              sx={{
-                marginTop: 8,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
-              <Typography component="h1" variant="h5">
-                Войти
-              </Typography>
-              <Box
-                component="form"
-                onSubmit={handleSubmit}
-                noValidate
-                sx={{ mt: 1 }}
-              >
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Почта email"
-                  name="email"
-                  autoComplete="email"
-                  autoFocus
-                />
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Пароль"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                />
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
-                >
-                  Войти
-                </Button>
-              </Box>
-            </Box>
-          </Container>
-        </ThemeProvider>
+          <button className={styles.signInButton} onClick={handleSubmit}>
+            ВОЙТИ
+          </button>
+        </div>
+
         <p className={styles.text}>
           Нет аккаунта? <NavLink to="/signup">Зарегистрироваться</NavLink>
         </p>

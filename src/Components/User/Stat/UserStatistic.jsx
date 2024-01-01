@@ -65,6 +65,7 @@ const UserStatistic = () => {
       <div className={styles.box}>
         <div className={styles.container}>
           <h3 className={styles.title}>Статистика</h3>
+
           <MyBackButton />
           <div className={styles.titleTable}>
             <p className={styles.itemTable1}>№</p>
@@ -89,11 +90,19 @@ const UserStatistic = () => {
               <p className={styles.itemTable2}>{item.nameOfProg}</p>
               <p className={styles.itemTable3}>{item.correctCount}</p>
               <p className={styles.itemTable4}>{item.saveTime}</p>
-              <p className={styles.itemTable5}> {item.date}</p>
-              <p className={styles.itemTable6}>
+              <p
+                className={styles.itemTable5}
+                onClick={() => clickOnDeleteButton(item.id, indx)}
+              >
+                {" "}
+                {item.date}
+              </p>
+              <p
+                className={styles.itemTable6}
+                onClick={() => clickOnDeleteButton(item.id, indx)}
+              >
                 {" "}
                 <img
-                  onClick={() => clickOnDeleteButton(item.id, indx)}
                   className={styles.deleteIcon}
                   src={deleteIcon}
                   alt="deleteIcon"

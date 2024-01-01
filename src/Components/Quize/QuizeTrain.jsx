@@ -93,6 +93,7 @@ const QuizeTrain = ({ mainResult }) => {
       <div {...handlers} ref={refPassthrough} className={styles.mainContainer}>
         {endOfQuestions ? (
           <div className={styles.trainWrap}>
+            <MyBackButton />
             <div className={styles.numberOfQuestion}>
               {countQuest + 1} / <br /> {mainResult.length}
             </div>
@@ -103,7 +104,7 @@ const QuizeTrain = ({ mainResult }) => {
                 type="text"
                 value={search}
                 onChange={searchFunc}
-                placeholder="Поиск по всем вопросам..."
+                placeholder="Поиск..."
               />
               <div
                 className={
@@ -136,8 +137,6 @@ const QuizeTrain = ({ mainResult }) => {
             >
               {`${showCorrectAnswer ? "Скрыть" : "Показать"} правильный ответ`}
             </div>
-
-            <MyBackButton />
 
             {goSearchItem ? (
               <div className={styles.itemBox}>

@@ -54,4 +54,10 @@
     width: 40px;
     height: 40px;
   }
+  .avaItem {
+    padding: 10px;
+  }
+  .avaPopUpActive {
+    background-color: rgb(218, 218, 218);
+  }
 }

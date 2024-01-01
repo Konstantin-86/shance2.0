@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
-import { MyContextEmail } from "./UseContxt/MyContext.js";
 
 /* import axios from "axios"; */
 
@@ -56,37 +55,35 @@ const SecondPage = () => {
       .catch((e) => console.log(e));
   }; */
   return (
-    <MyContextEmail.Provider value={{ newContxt: newMail }}>
-      <div className={styles.wrapPage}>
-        <div className={styles.container}>
-          {/* <button onClick={show}>show</button> */}
+    <div className={styles.wrapPage}>
+      <div className={styles.container}>
+        {/* <button onClick={show}>show</button> */}
 
-          <div className={styles.InnerPage}>
-            <img className={styles.logo} src={logo} alt="logo" />
-            {newMail ? (
-              <div>
-                <UserMenu
-                  creationAccauntDate={creationAccauntDate}
-                  lastSignInAcc={lastSignInAcc}
-                  emailIsVerified={emailIsVerified}
-                  newMail={newMail}
-                  setNewMail={setNewMail}
-                />
-              </div>
-            ) : (
-              <div>
-                <UserNotAuth></UserNotAuth>
-              </div>
-            )}
-          </div>
-
-          <h3 className={styles.title}>
-            Программа для проверки знаний по охране труда
-          </h3>
-          <MySelect newMail={newMail} />
+        <div className={styles.InnerPage}>
+          <img className={styles.logo} src={logo} alt="logo" />
+          {newMail ? (
+            <div>
+              <UserMenu
+                creationAccauntDate={creationAccauntDate}
+                lastSignInAcc={lastSignInAcc}
+                emailIsVerified={emailIsVerified}
+                newMail={newMail}
+                setNewMail={setNewMail}
+              />
+            </div>
+          ) : (
+            <div>
+              <UserNotAuth></UserNotAuth>
+            </div>
+          )}
         </div>
+
+        <h3 className={styles.title}>
+          Программа для проверки знаний по охране труда
+        </h3>
+        <MySelect newMail={newMail} />
       </div>
-    </MyContextEmail.Provider>
+    </div>
   );
 };
 

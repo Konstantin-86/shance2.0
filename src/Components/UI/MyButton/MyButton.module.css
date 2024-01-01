@@ -1,5 +1,5 @@
 .myButton {
-  background-color: #405cf5;
+  background-color: var(--mainColor);
   border-radius: 6px;
   border-width: 0;
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,

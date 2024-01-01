@@ -72,12 +72,7 @@ export default function UserMenu({
         >
           <ul>
             <li onClick={profileFunc} className={styles.avaItem}>
-              <Link
-                to={{
-                  pathname: "/main/userprofile",
-                  state: { /* newMail: newMail, */ name: "konst" },
-                }}
-              ></Link>
+              <Link to={"/main/userprofile"}></Link>
               Профиль
             </li>
             <li onClick={starUserFunc} className={styles.avaItem}>

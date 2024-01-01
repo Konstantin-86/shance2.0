@@ -21,6 +21,7 @@ const QuizeFofm = ({
   const [preSelection, setPreSelection] = useState(null);
   const [saveTime, setSaveTime] = useState(null);
   const [showEffect, setShowEffect] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -39,7 +40,13 @@ const QuizeFofm = ({
     setSaveTime(time);
   };
   const nextQuestionFunc = async () => {
-    if (preSelection == null) return alert("выберите ответ");
+    if (preSelection == null) {
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 1000);
+      return;
+    }
     setShowEffect(false);
     //массив вопрос + ответ
     let newArr = [...currentAnswersArr, mainResult[countQuest]];
@@ -68,7 +75,6 @@ const QuizeFofm = ({
         if (mainResult[countQuest].T5 == preSelection) {
           rightNumber = correctCount + 1;
         }
-        console.log(rightNumber);
         await axios
           .post("https://c443eaf7af5a8981.mokky.dev/results", {
             name: newMail,
@@ -102,6 +108,7 @@ const QuizeFofm = ({
           preSelectionFunc={preSelectionFunc}
           nextQuestionFunc={nextQuestionFunc}
           showEffect={showEffect}
+          showAlert={showAlert}
         />
       )}
     </>
