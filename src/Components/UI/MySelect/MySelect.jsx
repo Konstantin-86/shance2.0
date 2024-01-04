@@ -17,6 +17,7 @@ export default function MySelect({ newMail }) {
   const [numberOfQuestions, setNumberOfQuestions] = useState(0);
   const [numberProf, setNumberProf] = useState(0);
   const [showButton, setShowButton] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const [stateRadioBtn, setStateRadioBtn] = useState("");
   const [checked, setChecked] = useState(true);
@@ -27,7 +28,11 @@ export default function MySelect({ newMail }) {
 
   const goQuizze = () => {
     if (stateRadioBtn == "") {
-      return alert("Выбери режим");
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 1000);
+      return;
     }
     navigate("/main/quize", {
       state: { numberProf, stateRadioBtn, checked, newMail, age },
@@ -98,6 +103,11 @@ export default function MySelect({ newMail }) {
             src={arrow}
             alt="arrow"
           />
+        </div>
+        <div
+          className={showAlert ? styles.noAnswerActive : styles.noAnswerHide}
+        >
+          Выберите режим
         </div>
 
         <ul

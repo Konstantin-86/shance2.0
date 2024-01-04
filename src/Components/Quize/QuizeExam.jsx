@@ -21,7 +21,6 @@ const QuizeExam = ({
       if (dir == "Left") nextQuestionFunc();
     },
   });
-
   const myRef = useRef();
 
   const refPassthrough = (el) => {

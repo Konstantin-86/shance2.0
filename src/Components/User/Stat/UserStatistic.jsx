@@ -19,9 +19,10 @@ const UserStatistic = () => {
   const [isAuth, setAuth] = useState(false);
 
   useEffect(() => {
-    if (local.state == null) return setAuth(true);
+    if (local.state == null || local.state.newMail == "") {
+      return setAuth(true);
+    }
     const newMail = local.state.newMail;
-
     axios
       .get(`https://c443eaf7af5a8981.mokky.dev/results?name=${newMail}`)
       .then((res) => {

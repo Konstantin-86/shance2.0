@@ -15,6 +15,20 @@
   margin-bottom: 20px;
   text-align: center;
 }
+.goAgainBtn {
+  position: absolute;
+  width: 67px;
+  height: 44px;
+  top: 5px;
+  right: 5px;
+  background-color: #c1c1c18e;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 .countQuest {
   display: flex;
   justify-content: center;
@@ -29,7 +43,7 @@
   align-items: center;
   top: 0;
   right: 5px;
-  background-color: #c1c1c18e;
+  background-color: var(--secondColor);
   border-radius: 3px;
   color: #fff;
   transition: all 0.3s;
@@ -99,6 +113,9 @@
 }
 @media (min-width: 768px) {
   .refreshButton:hover {
+    background-color: var(--mainColor);
+  }
+  .goAgainBtn:hover {
     background-color: var(--mainColor);
   }
 }

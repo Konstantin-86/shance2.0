@@ -12,7 +12,12 @@ import good from "../../assets/images/smailIcons/good.png";
 import okgreen from "../../assets/images/icons/OKgreen.png";
 import nored from "../../assets/images/icons/NOred.png";
 
-const QuizeResult = ({ newMail, arrForResult, correctAnswrNumber }) => {
+const QuizeResult = ({
+  newMail,
+  arrForResult,
+  correctAnswrNumber,
+  goAgain,
+}) => {
   const [notbadState, setNotbadState] = useState(notbad);
   const [showAnswers, setShowAnswers] = useState(false);
   const nav = useNavigate();
@@ -25,7 +30,7 @@ const QuizeResult = ({ newMail, arrForResult, correctAnswrNumber }) => {
     if (correctAnswrNumber >= 7) {
       setNotbadState(good);
     }
-    if (correctAnswrNumber >= 5) {
+    if (6 > correctAnswrNumber >= 5) {
       setNotbadState(notbad);
     } else {
       setNotbadState(bad);
@@ -100,12 +105,15 @@ const QuizeResult = ({ newMail, arrForResult, correctAnswrNumber }) => {
       </div>
     </div>
   ));
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.box}>
           <MyBackButton />
-          <button>Заново</button>
+          <button className={styles.goAgainBtn} onClick={goAgain}>
+            Заново
+          </button>
           {/* <Link to={"/main/quize"}>
             <div className={styles.refreshButton}>Заново</div>
           </Link> */}
@@ -119,12 +127,8 @@ const QuizeResult = ({ newMail, arrForResult, correctAnswrNumber }) => {
             <img className={styles.imageIcon} src={notbadState} alt="notbad" />
           </div>
           <div className={styles.buttonsInner}>
-            <MyButton onClick={showCoorectFunc} variant="contained">
-              Правильные ответы
-            </MyButton>
-            <MyButton variant="contained" onClick={goToStat}>
-              Статистика
-            </MyButton>
+            <MyButton onClick={showCoorectFunc}>Правильные ответы</MyButton>
+            <MyButton onClick={goToStat}>Статистика</MyButton>
           </div>
           <div
             className={

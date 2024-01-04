@@ -135,8 +135,8 @@
   margin-bottom: 7px;
 }
 .inputSelect {
-  --s: 1em; /* control the size */
-  --c: var(--mainColor); /* the active color */
+  --s: 1em;
+  --c: var(--mainColor);
 
   height: var(--s);
   aspect-ratio: 1;
@@ -166,7 +166,6 @@
   padding: 7px 10px;
   border-radius: 7px;
 }
-/* The switch - the box around the slider */
 .switch {
   font-size: 17px;
   position: relative;
@@ -175,14 +174,12 @@
   height: 2em;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -253,6 +250,36 @@
 .imgOk {
   width: 30px;
   height: 30px;
+}
+.noAnswerActive {
+  position: absolute;
+  width: 150px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: #fff;
+  text-align: center;
+  background-color: #c1c1c18e;
+  top: -120px;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
+}
+.noAnswerHide {
+  position: absolute;
+  width: 150px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: #fff;
+  text-align: center;
+  background-color: #c1c1c18e;
+  top: -250px;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
 }
 .radioBtn {
   cursor: pointer;

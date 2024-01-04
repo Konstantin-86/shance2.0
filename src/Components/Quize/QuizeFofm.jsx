@@ -6,6 +6,7 @@ import QuizeExam from "./QuizeExam";
 
 const QuizeFofm = ({
   mainResult,
+  setMainResult,
   setLoading,
   newMail,
   correctAswrs,
@@ -39,6 +40,7 @@ const QuizeFofm = ({
   const giveSaveTime = (time) => {
     setSaveTime(time);
   };
+
   const nextQuestionFunc = async () => {
     if (preSelection == null) {
       setShowAlert(true);
@@ -83,10 +85,7 @@ const QuizeFofm = ({
             nameOfProg,
             saveTime,
           })
-          .catch((e) => console.log(e))
-          .finally(() => {
-            correctAswrs(newArr);
-          });
+          .catch((e) => console.log(e));
       }
     } else {
       setTimeout(() => {
@@ -94,6 +93,7 @@ const QuizeFofm = ({
       }, 300);
       setCountQuest(countQuest + 1);
     }
+    correctAswrs(newArr);
   };
   return (
     <>
@@ -103,6 +103,7 @@ const QuizeFofm = ({
         <QuizeExam
           giveSaveTime={giveSaveTime}
           mainResult={mainResult}
+          setMainResult={setMainResult}
           countQuest={countQuest}
           preSelection={preSelection}
           preSelectionFunc={preSelectionFunc}

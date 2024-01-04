@@ -23,35 +23,38 @@ const Quize = () => {
   const newMail = local.state.newMail;
   const nameOfProg = local.state.age;
 
+  let numbers = [];
+  while (numbers.length < 10) {
+    let randomNumber = Math.floor(Math.random() * 201);
+    if (!numbers.includes(randomNumber)) {
+      numbers.push(randomNumber);
+    }
+  }
+
   useEffect(() => {
     axios
       .get(`https://c443eaf7af5a8981.mokky.dev/allQuestions/${numberProf}`)
       .then((res) => {
         // eslint-disable-next-line no-unused-vars
         const arr = [res.data].map(({ id, ...rest }) => rest);
-        const newArray = Object.values(...arr);
-
+        const newArr = Object.values(...arr);
         //Режим Тренировка
         if (mode === "Тренировка") {
           if (checked) {
-            setMainResult(newArray.sort(() => Math.random() - 0.5));
+            setMainResult(newArr.sort(() => Math.random() - 0.5));
+            console.log(mainResult);
             setLoading(false);
           } else {
-            setMainResult(newArray);
+            setMainResult(newArr);
             setLoading(false);
           }
         } else {
           //Режим Экзамен
-          const randomNumbers = [];
-          for (let i = 0; i < 10; i++) {
-            const randomNumber = Math.floor(Math.random() * newArray.length);
-            randomNumbers.push(randomNumber);
-          }
+
           const resultArr = [];
-          for (let i = 0; i < randomNumbers.length; i++) {
-            let num = randomNumbers[i];
-            resultArr.push(newArray[num]);
-          }
+          numbers.map((item) => {
+            resultArr.push(newArr[item]);
+          });
           setMainResult(resultArr);
           setLoading(false);
         }
@@ -66,6 +69,10 @@ const Quize = () => {
 
   const correctAswrs = (arr) => {
     setArrForResult(arr);
+  };
+  const goAgain = () => {
+    setLoading(false);
+    setShowResult(false);
   };
   return (
     <div>
@@ -108,11 +115,13 @@ const Quize = () => {
               setShowResult={setShowResult}
               setCorrectAnswrNumber={setCorrectAnswrNumber}
               mode={mode}
+              setMainResult={setMainResult}
             ></QuizeFofm>
           )}
           {showResult && (
             <div className={styles.resultInner}>
               <QuizeResult
+                goAgain={goAgain}
                 arrForResult={arrForResult}
                 correctAnswrNumber={correctAnswrNumber}
                 newMail={newMail}
