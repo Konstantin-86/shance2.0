@@ -14,6 +14,7 @@ const Quize = () => {
   const [error, setError] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [correctAnswrNumber, setCorrectAnswrNumber] = useState(0);
+  const [fullArrFromServer, setFullArrFromServer] = useState([]);
 
   const local = useLocation();
 
@@ -38,6 +39,7 @@ const Quize = () => {
         // eslint-disable-next-line no-unused-vars
         const arr = [res.data].map(({ id, ...rest }) => rest);
         const newArr = Object.values(...arr);
+        setFullArrFromServer(Object.values(...arr));
         //Режим Тренировка
         if (mode === "Тренировка") {
           if (checked) {
@@ -71,6 +73,18 @@ const Quize = () => {
     setArrForResult(arr);
   };
   const goAgain = () => {
+    let numbers = [];
+    while (numbers.length < 10) {
+      let randomNumber = Math.floor(Math.random() * 201);
+      if (!numbers.includes(randomNumber)) {
+        numbers.push(randomNumber);
+      }
+    }
+    const resultArr = [];
+    numbers.map((item) => {
+      resultArr.push(fullArrFromServer[item]);
+    });
+    setMainResult(resultArr);
     setLoading(false);
     setShowResult(false);
   };

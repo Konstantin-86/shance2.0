@@ -27,19 +27,25 @@ const UserNotAuth = () => {
         className={styles.box}
       >
         ?
-        {showInner && (
-          <div className={styles.inner}>
+        {showInner ? (
+          <div className={styles.innerShow}>
             <p>Вы не авторизованны</p>
 
             <ul className={styles.list}>
-              <Link to={"/SignUp"} className={styles.item}>
-                Регистрация
-              </Link>
-              <Link to={"/login"} className={styles.item}>
-                Войти
-              </Link>
+              <li className={styles.listItem}>
+                <Link to={"/SignUp"} className={styles.item}>
+                  Регистрация
+                </Link>
+              </li>
+              <li className={styles.listItem}>
+                <Link to={"/login"} className={styles.item}>
+                  Войти
+                </Link>
+              </li>
             </ul>
           </div>
+        ) : (
+          <div className={styles.innerHide}></div>
         )}
       </div>
     </>

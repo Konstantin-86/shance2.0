@@ -28,9 +28,9 @@ const QuizeResult = ({
   };
   useEffect(() => {
     if (correctAnswrNumber >= 7) {
-      setNotbadState(good);
+      return setNotbadState(good);
     }
-    if (6 > correctAnswrNumber >= 5) {
+    if (correctAnswrNumber >= 5) {
       setNotbadState(notbad);
     } else {
       setNotbadState(bad);

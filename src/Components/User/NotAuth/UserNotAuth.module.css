@@ -12,7 +12,7 @@
   transition: all 0.3s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.inner {
+.innerShow {
   position: absolute;
   top: 40px;
   left: -100px;
@@ -21,13 +21,37 @@
   background-color: #fff;
   font-size: 12px;
   overflow: hidden;
+  z-index: 5;
+  box-shadow: -2px 2px 8px 0px rgba(34, 60, 80, 0.2);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s;
+}
+.innerHide {
+  position: absolute;
+  top: 60px;
+  left: -100px;
+  width: 140px;
+  border-radius: 7px;
+  background-color: #fff;
+  font-size: 12px;
+  overflow: hidden;
+  z-index: 5;
+  box-shadow: -2px 2px 8px 0px rgba(34, 60, 80, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
 }
 .list {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
 }
-.inner p {
+.listItem {
+  padding: 8px 0;
+}
+.innerShow p {
   padding: 5px;
   font-weight: 600;
   margin-bottom: 8px;
@@ -38,8 +62,8 @@
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  .item:hover {
-    background-color: #c5c3c3;
+  .listItem:hover {
+    background-color: var(--secondColor);
   }
   .box:hover {
     background-color: var(--mainColor);

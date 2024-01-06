@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 
 import login from "../../../assets/images/icons/login.png";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,7 +31,19 @@ const Login = () => {
         }, 2000);
       });
   };
-
+ /*  const gogo = () => {
+    axios
+      .post("https://c443eaf7af5a8981.mokky.dev/users", [
+        {
+          name: 3,
+          name2: 4,
+        },
+      ])
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => console.error(e));
+  }; */
   return (
     <>
       <div className={styles.container}>
@@ -40,7 +53,8 @@ const Login = () => {
         >
           Ошибка логина или пароля
         </div>
-        <div className={styles.contentBox}>
+        <div className={styles.contentBox}>{/* 
+          <button onClick={gogo}> gogo</button> */}
           <img className={styles.loginImg} src={login} alt="login" />
           <form>
             <div className={styles.innerLogin}>
