@@ -39,7 +39,19 @@ const QuizeResult = ({
   const showCoorectFunc = () => {
     setShowAnswers(!showAnswers);
   };
-  const itemList = arrForResult.map((elem, index) => (
+
+  let arr2 = arrForResult.map((item) => {
+    const { NAMEB, T5, personResponse, ...rest } = item;
+    const valuesArray = Object.values(rest);
+    return {
+      name: NAMEB,
+      answers: valuesArray,
+      correctAnswer: T5,
+      currentAnswer: personResponse,
+    };
+  });
+
+  /*  const itemList = arrForResult.map((elem, index) => (
     <div key={index} className={styles.item}>
       <div className={styles.itemBox}>
         <h3 className={styles.itemTitle}>{elem.NAMEB}</h3>
@@ -104,7 +116,7 @@ const QuizeResult = ({
         )}
       </div>
     </div>
-  ));
+  )); */
 
   return (
     <>
@@ -114,9 +126,6 @@ const QuizeResult = ({
           <button className={styles.goAgainBtn} onClick={goAgain}>
             Заново
           </button>
-          {/* <Link to={"/main/quize"}>
-            <div className={styles.refreshButton}>Заново</div>
-          </Link> */}
 
           <h2 className={styles.title}>Результаты</h2>
           <div className={styles.countQuest}>
@@ -126,9 +135,9 @@ const QuizeResult = ({
           <div className={styles.imgWrapper}>
             <img className={styles.imageIcon} src={notbadState} alt="notbad" />
           </div>
+
           <div className={styles.buttonsInner}>
             <MyButton onClick={showCoorectFunc}>Правильные ответы</MyButton>
-            <MyButton onClick={goToStat}>Статистика</MyButton>
           </div>
           <div
             className={
@@ -137,7 +146,62 @@ const QuizeResult = ({
                 : styles.innerCoorectAnswersHide
             }
           >
-            {itemList}
+            {arr2.map((item) => (
+              <div key={item.name} className={styles.item}>
+                <div className={styles.itemBox}>
+                  <div>
+                    <h3 className={styles.itemTitle}>{item.name}</h3>
+                    {item.answers.map((elem, i) => (
+                      <div key={i}>
+                        <p
+                          className={
+                            i === item.correctAnswer - 1
+                              ? i === item.currentAnswer - 1
+                                ? styles.blue // правильный и полученный ответ совпадают
+                                : styles.green // только правильный ответ
+                              : i === item.currentAnswer - 1
+                              ? styles.red // только полученный ответ
+                              : styles.empty
+                          }
+                        >
+                          {elem}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.itemBox}>
+                  {item.currentAnswer === item.correctAnswer && (
+                    <img
+                      className={styles.statusImg}
+                      src={okgreen}
+                      alt="okgreen"
+                    />
+                  )}
+                  {item.currentAnswer !== item.correctAnswer && (
+                    <img
+                      className={styles.statusImg}
+                      src={nored}
+                      alt="okgreen"
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+            <div className={styles.innerFooterBtns}>
+              <button
+                className={styles.footerBackBtn}
+                onClick={() => window.history.back()}
+              >
+                Назад
+              </button>
+              <button className={styles.footerStatBtn} onClick={goToStat}>
+                Статистика
+              </button>
+              <button className={styles.footerGoAgainBtn} onClick={goAgain}>
+                Заново
+              </button>
+            </div>
           </div>
         </div>
       </div>

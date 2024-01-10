@@ -23,10 +23,11 @@ const Quize = () => {
   const checked = local.state.checked;
   const newMail = local.state.newMail;
   const nameOfProg = local.state.age;
+  const numberOfQuestions = local.state.numberOfQuestions;
 
   let numbers = [];
   while (numbers.length < 10) {
-    let randomNumber = Math.floor(Math.random() * 201);
+    let randomNumber = Math.floor(Math.random() * numberOfQuestions);
     if (!numbers.includes(randomNumber)) {
       numbers.push(randomNumber);
     }
@@ -75,7 +76,7 @@ const Quize = () => {
   const goAgain = () => {
     let numbers = [];
     while (numbers.length < 10) {
-      let randomNumber = Math.floor(Math.random() * 201);
+      let randomNumber = Math.floor(Math.random() * numberOfQuestions);
       if (!numbers.includes(randomNumber)) {
         numbers.push(randomNumber);
       }

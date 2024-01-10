@@ -35,7 +35,14 @@ export default function MySelect({ newMail }) {
       return;
     }
     navigate("/main/quize", {
-      state: { numberProf, stateRadioBtn, checked, newMail, age },
+      state: {
+        numberProf,
+        stateRadioBtn,
+        checked,
+        newMail,
+        age,
+        numberOfQuestions,
+      },
     });
   };
 
