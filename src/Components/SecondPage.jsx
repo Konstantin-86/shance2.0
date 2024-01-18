@@ -9,7 +9,7 @@ import MySelect from "./UI/MySelect/MySelect.jsx";
 
 import styles from "../styles//SecondPage.module.css";
 
-/* import prog14 from "../DATA/PROGV014.json";
+/* import prog16 from "../DATA/PROGV016.json";
 import all from "../DATA/AllQuestions.json"; */
 
 import logo from "../assets/images/logo2.png";
@@ -33,8 +33,8 @@ const SecondPage = () => {
     });
   }, []);
   // для добавления новых вопросов
-  /* const show = async () => {
-    const arr = prog14.map((elem) => elem.NOMB);
+  /*  const show = async () => {
+    const arr = prog16.map((elem) => elem.NOMB);
 
     let arr2 = [];
     for (let i = 0; i < all.length; i++) {
@@ -48,7 +48,7 @@ const SecondPage = () => {
       // eslint-disable-next-line no-unused-vars
       ({ NOMB, KODL, PRIZN, PUNKT, ...rest }) => rest
     );
-    console.log(arr3); 
+    console.log(arr3);
     await axios
       .post("https://c443eaf7af5a8981.mokky.dev/allQuestions", arr3)
       .then((res) => console.log(res))
