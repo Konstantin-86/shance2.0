@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 
-/* import axios from "axios"; */
+import axios from "axios";
 
 import UserMenu from "../Components/User/Menu/UserMenu.jsx";
 import MySelect from "./UI/MySelect/MySelect.jsx";
 
 import styles from "../styles//SecondPage.module.css";
 
-/* import prog73 from "../DATA/PROGV073.json";
-import all from "../DATA/AllQuestions.json"; */
+import prog20 from "../DATA/PROGV020.json";
+import all from "../DATA/AllQuestions.json";
 
 import logo from "../assets/images/logo2.png";
 import UserNotAuth from "../Components/User/NotAuth/UserNotAuth.jsx";
@@ -33,8 +33,8 @@ const SecondPage = () => {
     });
   }, []);
   // для добавления новых вопросов
-  /*  const show = async () => {
-    const arr = prog73.map((elem) => elem.NOMB);
+  const show = async () => {
+    const arr = prog20.map((elem) => elem.NOMB);
 
     let arr2 = [];
     for (let i = 0; i < all.length; i++) {
@@ -53,11 +53,11 @@ const SecondPage = () => {
       .post("https://c443eaf7af5a8981.mokky.dev/allQuestions", arr3)
       .then((res) => console.log(res))
       .catch((e) => console.log(e));
-  }; */
+  };
   return (
     <div className={styles.wrapPage}>
       <div className={styles.container}>
-        {/* <button onClick={show}>show</button> */}
+        <button onClick={show}>show</button>
 
         <div className={styles.InnerPage}>
           <img className={styles.logo} src={logo} alt="logo" />
