@@ -9,7 +9,7 @@ import MySelect from "./UI/MySelect/MySelect.jsx";
 
 import styles from "../styles//SecondPage.module.css";
 
-/* import prog16 from "../DATA/PROGV016.json";
+/* import prog73 from "../DATA/PROGV073.json";
 import all from "../DATA/AllQuestions.json"; */
 
 import logo from "../assets/images/logo2.png";
@@ -34,7 +34,7 @@ const SecondPage = () => {
   }, []);
   // для добавления новых вопросов
   /*  const show = async () => {
-    const arr = prog16.map((elem) => elem.NOMB);
+    const arr = prog73.map((elem) => elem.NOMB);
 
     let arr2 = [];
     for (let i = 0; i < all.length; i++) {
