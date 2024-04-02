@@ -12,7 +12,6 @@ import styles from "../styles//SecondPage.module.css";
 /* import prog20 from "../DATA/PROGV020.json";
 import all from "../DATA/AllQuestions.json"; */
 
-import logo from "../assets/images/logo2.png";
 import UserNotAuth from "../Components/User/NotAuth/UserNotAuth.jsx";
 
 const SecondPage = () => {
@@ -60,7 +59,7 @@ const SecondPage = () => {
         {/* <button onClick={show}>show</button> */}
 
         <div className={styles.InnerPage}>
-          <img className={styles.logo} src={logo} alt="logo" />
+          <p>LOGO</p>
           {newMail ? (
             <div>
               <UserMenu
