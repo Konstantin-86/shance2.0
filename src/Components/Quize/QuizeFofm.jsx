@@ -95,6 +95,11 @@ const QuizeFofm = ({
     }
     correctAswrs(newArr);
   };
+
+  const showCheats = nameOfProg == "для электpомонтера по pемонту и обслуживанию электрооборудования"
+  
+  
+  
   return (
     <>
       {mode == "Тренировка" ? (
@@ -110,6 +115,7 @@ const QuizeFofm = ({
           nextQuestionFunc={nextQuestionFunc}
           showEffect={showEffect}
           showAlert={showAlert}
+          showCheats={showCheats}
         />
       )}
     </>

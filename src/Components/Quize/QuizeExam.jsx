@@ -15,6 +15,7 @@ const QuizeExam = ({
   showEffect,
   giveSaveTime,
   showAlert,
+  showCheats
 }) => {
   const handlers = useSwipeable({
     onSwiped: ({ dir }) => {
@@ -27,6 +28,11 @@ const QuizeExam = ({
     handlers.ref(el);
     myRef.current = el;
   };
+  console.log(+mainResult[countQuest].OTV1.slice(0, 1) === mainResult[countQuest].T5 && showCheats && ";");
+  console.log("mainResult[countQuest].OTV1.slice(0, 1)", +mainResult[countQuest].OTV1.slice(0, 1));
+  console.log("mainResult[countQuest].T5", mainResult[countQuest].T5);
+  console.log("showCheats", showCheats);
+  
 
   return (
     <div>
@@ -55,12 +61,14 @@ const QuizeExam = ({
                 onClick={() => preSelectionFunc(1)}
               >
                 {mainResult[countQuest].OTV1}
+                {+mainResult[countQuest].OTV1.slice(0, 1) === mainResult[countQuest].T5 && showCheats && ";"}
               </div>
               <div
                 className={preSelection == 2 ? styles.itemActive : styles.item}
                 onClick={() => preSelectionFunc(2)}
               >
                 {mainResult[countQuest].OTV2}
+                {+mainResult[countQuest].OTV2.slice(0, 1) === mainResult[countQuest].T5 && showCheats && ";"}
               </div>
               {mainResult[countQuest].OTV3 && (
                 <div
@@ -70,6 +78,7 @@ const QuizeExam = ({
                   onClick={() => preSelectionFunc(3)}
                 >
                   {mainResult[countQuest].OTV3}
+                  {+mainResult[countQuest].OTV3.slice(0, 1) === mainResult[countQuest].T5 && showCheats && ";"}
                 </div>
               )}
               {mainResult[countQuest].OTV4 && (
@@ -80,6 +89,7 @@ const QuizeExam = ({
                   onClick={() => preSelectionFunc(4)}
                 >
                   {mainResult[countQuest].OTV4}
+                  {+mainResult[countQuest].OTV4.slice(0, 1) === mainResult[countQuest].T5 && showCheats && ";"}
                 </div>
               )}
               {mainResult[countQuest].OTV5 && (
@@ -90,13 +100,14 @@ const QuizeExam = ({
                   onClick={() => preSelectionFunc(5)}
                 >
                   {mainResult[countQuest].OTV5}
+                  {+mainResult[countQuest].OTV5.slice(0, 1) === mainResult[countQuest].T5 && showCheats && ";"}
                 </div>
               )}
             </div>
           )}
 
           <div className={styles.btnWrap}>
-            {" "}
+            
             <MyButton onClick={nextQuestionFunc}>Следующий вопрос</MyButton>
           </div>
         </div>

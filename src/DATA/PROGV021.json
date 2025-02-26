@@ -1,0 +1,946 @@
+[
+ {
+  "NOMB": 1,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2,
+  "KODL": 6
+ },
+ {
+  "NOMB": 3,
+  "KODL": 6
+ },
+ {
+  "NOMB": 4,
+  "KODL": 6
+ },
+ {
+  "NOMB": 5,
+  "KODL": 6
+ },
+ {
+  "NOMB": 6,
+  "KODL": 6
+ },
+ {
+  "NOMB": 7,
+  "KODL": 6
+ },
+ {
+  "NOMB": 8,
+  "KODL": 6
+ },
+ {
+  "NOMB": 9,
+  "KODL": 6
+ },
+ {
+  "NOMB": 10,
+  "KODL": 6
+ },
+ {
+  "NOMB": 11,
+  "KODL": 6
+ },
+ {
+  "NOMB": 12,
+  "KODL": 6
+ },
+ {
+  "NOMB": 13,
+  "KODL": 6
+ },
+ {
+  "NOMB": 14,
+  "KODL": 6
+ },
+ {
+  "NOMB": 15,
+  "KODL": 6
+ },
+ {
+  "NOMB": 16,
+  "KODL": 6
+ },
+ {
+  "NOMB": 17,
+  "KODL": 6
+ },
+ {
+  "NOMB": 18,
+  "KODL": 6
+ },
+ {
+  "NOMB": 19,
+  "KODL": 6
+ },
+ {
+  "NOMB": 20,
+  "KODL": 6
+ },
+ {
+  "NOMB": 21,
+  "KODL": 6
+ },
+ {
+  "NOMB": 22,
+  "KODL": 6
+ },
+ {
+  "NOMB": 23,
+  "KODL": 6
+ },
+ {
+  "NOMB": 24,
+  "KODL": 6
+ },
+ {
+  "NOMB": 25,
+  "KODL": 6
+ },
+ {
+  "NOMB": 26,
+  "KODL": 6
+ },
+ {
+  "NOMB": 27,
+  "KODL": 6
+ },
+ {
+  "NOMB": 28,
+  "KODL": 6
+ },
+ {
+  "NOMB": 29,
+  "KODL": 6
+ },
+ {
+  "NOMB": 30,
+  "KODL": 6
+ },
+ {
+  "NOMB": 31,
+  "KODL": 6
+ },
+ {
+  "NOMB": 32,
+  "KODL": 6
+ },
+ {
+  "NOMB": 33,
+  "KODL": 6
+ },
+ {
+  "NOMB": 34,
+  "KODL": 6
+ },
+ {
+  "NOMB": 35,
+  "KODL": 6
+ },
+ {
+  "NOMB": 36,
+  "KODL": 6
+ },
+ {
+  "NOMB": 37,
+  "KODL": 6
+ },
+ {
+  "NOMB": 38,
+  "KODL": 6
+ },
+ {
+  "NOMB": 39,
+  "KODL": 6
+ },
+ {
+  "NOMB": 40,
+  "KODL": 6
+ },
+ {
+  "NOMB": 41,
+  "KODL": 6
+ },
+ {
+  "NOMB": 42,
+  "KODL": 6
+ },
+ {
+  "NOMB": 43,
+  "KODL": 6
+ },
+ {
+  "NOMB": 44,
+  "KODL": 6
+ },
+ {
+  "NOMB": 45,
+  "KODL": 6
+ },
+ {
+  "NOMB": 46,
+  "KODL": 6
+ },
+ {
+  "NOMB": 48,
+  "KODL": 6
+ },
+ {
+  "NOMB": 49,
+  "KODL": 6
+ },
+ {
+  "NOMB": 50,
+  "KODL": 6
+ },
+ {
+  "NOMB": 51,
+  "KODL": 6
+ },
+ {
+  "NOMB": 52,
+  "KODL": 6
+ },
+ {
+  "NOMB": 53,
+  "KODL": 6
+ },
+ {
+  "NOMB": 54,
+  "KODL": 6
+ },
+ {
+  "NOMB": 55,
+  "KODL": 6
+ },
+ {
+  "NOMB": 56,
+  "KODL": 6
+ },
+ {
+  "NOMB": 57,
+  "KODL": 6
+ },
+ {
+  "NOMB": 58,
+  "KODL": 6
+ },
+ {
+  "NOMB": 59,
+  "KODL": 6
+ },
+ {
+  "NOMB": 60,
+  "KODL": 6
+ },
+ {
+  "NOMB": 61,
+  "KODL": 6
+ },
+ {
+  "NOMB": 62,
+  "KODL": 6
+ },
+ {
+  "NOMB": 63,
+  "KODL": 6
+ },
+ {
+  "NOMB": 64,
+  "KODL": 6
+ },
+ {
+  "NOMB": 65,
+  "KODL": 6
+ },
+ {
+  "NOMB": 66,
+  "KODL": 6
+ },
+ {
+  "NOMB": 67,
+  "KODL": 6
+ },
+ {
+  "NOMB": 68,
+  "KODL": 6
+ },
+ {
+  "NOMB": 69,
+  "KODL": 6
+ },
+ {
+  "NOMB": 70,
+  "KODL": 6
+ },
+ {
+  "NOMB": 71,
+  "KODL": 6
+ },
+ {
+  "NOMB": 72,
+  "KODL": 6
+ },
+ {
+  "NOMB": 73,
+  "KODL": 6
+ },
+ {
+  "NOMB": 74,
+  "KODL": 6
+ },
+ {
+  "NOMB": 75,
+  "KODL": 6
+ },
+ {
+  "NOMB": 76,
+  "KODL": 6
+ },
+ {
+  "NOMB": 77,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2089,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2090,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2091,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2092,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2093,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2094,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2095,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2096,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2097,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2098,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2099,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2100,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2101,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2102,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2103,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2112,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2113,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2114,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2115,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2117,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2118,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2119,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2120,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2121,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2122,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2123,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2124,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2125,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2126,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2127,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2128,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2135,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2136,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2137,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2138,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2139,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2140,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2141,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2142,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2143,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2144,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2145,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2146,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2147,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2148,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2149,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2150,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2151,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2152,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2153,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2154,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2155,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2156,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2157,
+  "KODL": 6
+ },
+ {
+  "NOMB": 2158,
+  "KODL": 6
+ },
+ {
+  "NOMB": 172,
+  "KODL": 12
+ },
+ {
+  "NOMB": 174,
+  "KODL": 12
+ },
+ {
+  "NOMB": 175,
+  "KODL": 12
+ },
+ {
+  "NOMB": 176,
+  "KODL": 12
+ },
+ {
+  "NOMB": 177,
+  "KODL": 12
+ },
+ {
+  "NOMB": 178,
+  "KODL": 12
+ },
+ {
+  "NOMB": 181,
+  "KODL": 12
+ },
+ {
+  "NOMB": 182,
+  "KODL": 12
+ },
+ {
+  "NOMB": 183,
+  "KODL": 12
+ },
+ {
+  "NOMB": 184,
+  "KODL": 12
+ },
+ {
+  "NOMB": 901,
+  "KODL": 18
+ },
+ {
+  "NOMB": 902,
+  "KODL": 18
+ },
+ {
+  "NOMB": 903,
+  "KODL": 18
+ },
+ {
+  "NOMB": 1096,
+  "KODL": 21
+ },
+ {
+  "NOMB": 1097,
+  "KODL": 21
+ },
+ {
+  "NOMB": 1098,
+  "KODL": 21
+ },
+ {
+  "NOMB": 1099,
+  "KODL": 21
+ },
+ {
+  "NOMB": 1100,
+  "KODL": 21
+ },
+ {
+  "NOMB": 665,
+  "KODL": 36
+ },
+ {
+  "NOMB": 666,
+  "KODL": 36
+ },
+ {
+  "NOMB": 667,
+  "KODL": 36
+ },
+ {
+  "NOMB": 668,
+  "KODL": 36
+ },
+ {
+  "NOMB": 669,
+  "KODL": 36
+ },
+ {
+  "NOMB": 670,
+  "KODL": 36
+ },
+ {
+  "NOMB": 671,
+  "KODL": 36
+ },
+ {
+  "NOMB": 672,
+  "KODL": 36
+ },
+ {
+  "NOMB": 673,
+  "KODL": 36
+ },
+ {
+  "NOMB": 674,
+  "KODL": 36
+ },
+ {
+  "NOMB": 675,
+  "KODL": 36
+ },
+ {
+  "NOMB": 676,
+  "KODL": 36
+ },
+ {
+  "NOMB": 677,
+  "KODL": 36
+ },
+ {
+  "NOMB": 678,
+  "KODL": 36
+ },
+ {
+  "NOMB": 679,
+  "KODL": 36
+ },
+ {
+  "NOMB": 680,
+  "KODL": 36
+ },
+ {
+  "NOMB": 681,
+  "KODL": 36
+ },
+ {
+  "NOMB": 682,
+  "KODL": 36
+ },
+ {
+  "NOMB": 683,
+  "KODL": 36
+ },
+ {
+  "NOMB": 684,
+  "KODL": 36
+ },
+ {
+  "NOMB": 685,
+  "KODL": 36
+ },
+ {
+  "NOMB": 686,
+  "KODL": 36
+ },
+ {
+  "NOMB": 687,
+  "KODL": 36
+ },
+ {
+  "NOMB": 688,
+  "KODL": 36
+ },
+ {
+  "NOMB": 689,
+  "KODL": 36
+ },
+ {
+  "NOMB": 690,
+  "KODL": 36
+ },
+ {
+  "NOMB": 691,
+  "KODL": 36
+ },
+ {
+  "NOMB": 692,
+  "KODL": 36
+ },
+ {
+  "NOMB": 693,
+  "KODL": 36
+ },
+ {
+  "NOMB": 694,
+  "KODL": 36
+ },
+ {
+  "NOMB": 695,
+  "KODL": 36
+ },
+ {
+  "NOMB": 696,
+  "KODL": 36
+ },
+ {
+  "NOMB": 697,
+  "KODL": 36
+ },
+ {
+  "NOMB": 595,
+  "KODL": 37
+ },
+ {
+  "NOMB": 596,
+  "KODL": 37
+ },
+ {
+  "NOMB": 597,
+  "KODL": 37
+ },
+ {
+  "NOMB": 600,
+  "KODL": 37
+ },
+ {
+  "NOMB": 201,
+  "KODL": 60
+ },
+ {
+  "NOMB": 202,
+  "KODL": 60
+ },
+ {
+  "NOMB": 203,
+  "KODL": 60
+ },
+ {
+  "NOMB": 204,
+  "KODL": 60
+ },
+ {
+  "NOMB": 274,
+  "KODL": 60
+ },
+ {
+  "NOMB": 894,
+  "KODL": 60
+ },
+ {
+  "NOMB": 895,
+  "KODL": 60
+ },
+ {
+  "NOMB": 896,
+  "KODL": 60
+ },
+ {
+  "NOMB": 897,
+  "KODL": 60
+ },
+ {
+  "NOMB": 898,
+  "KODL": 60
+ },
+ {
+  "NOMB": 899,
+  "KODL": 60
+ },
+ {
+  "NOMB": 900,
+  "KODL": 60
+ },
+ {
+  "NOMB": 980,
+  "KODL": 60
+ },
+ {
+  "NOMB": 981,
+  "KODL": 60
+ },
+ {
+  "NOMB": 982,
+  "KODL": 60
+ },
+ {
+  "NOMB": 983,
+  "KODL": 60
+ },
+ {
+  "NOMB": 994,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1101,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1156,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1658,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1659,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1660,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1661,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1662,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1663,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1664,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1665,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1666,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1667,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1668,
+  "KODL": 60
+ },
+ {
+  "NOMB": 1669,
+  "KODL": 60
+ },
+ {
+  "NOMB": 2529,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2530,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2531,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2532,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2533,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2534,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2535,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2536,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2537,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2538,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2539,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2540,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2541,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2542,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2543,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2544,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2545,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2546,
+  "KODL": 75
+ },
+ {
+  "NOMB": 2547,
+  "KODL": 75
+ }
+]

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
-/* 
-import axios from "axios"; */
+
+/* import axios from "axios"; */
 
 import UserMenu from "../Components/User/Menu/UserMenu.jsx";
 import MySelect from "./UI/MySelect/MySelect.jsx";
 
 import styles from "../styles//SecondPage.module.css";
 
-/* import prog20 from "../DATA/PROGV020.json";
+/* import prog21 from "../DATA/PROGV021.json";
 import all from "../DATA/AllQuestions.json"; */
 
 import UserNotAuth from "../Components/User/NotAuth/UserNotAuth.jsx";
@@ -32,8 +32,8 @@ const SecondPage = () => {
     });
   }, []);
   // для добавления новых вопросов
-  /* const show = async () => {
-    const arr = prog20.map((elem) => elem.NOMB);
+ /*  const show = async () => {
+    const arr = prog21.map((elem) => elem.NOMB);
 
     let arr2 = [];
     for (let i = 0; i < all.length; i++) {
@@ -56,7 +56,7 @@ const SecondPage = () => {
   return (
     <div className={styles.wrapPage}>
       <div className={styles.container}>
-        {/* <button onClick={show}>show</button> */}
+       {/* <button onClick={show}>add new proff</button> */}
 
         <div className={styles.InnerPage}>
           <p>LOGO</p>
