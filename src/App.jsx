@@ -1,51 +1,53 @@
 import { useEffect, useState } from "react";
-
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
-
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 import styles from "./styles//App.module.css";
 
 function App() {
   const [showTitle, setShowTitle] = useState(false);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/main");
-      } else {
-        navigate("/");
-        setTimeout(() => {
-          setShowTitle(true);
-        }, 500);
-      }
+      // Просто показываем заголовок, независимо от статуса авторизации
+      setShowTitle(true);
+
+      // Если хотите редиректить авторизованных пользователей на main,
+      // но сейчас сайт закрыт, так что лучше не редиректить
+      // if (user) {
+      //   navigate("/main");
+      // }
     });
   }, [navigate]);
+
+  const handleRustoreClick = () => {
+    window.open("https://www.rustore.ru/catalog/app/ru.ot.test", "_blank");
+  };
+
   return (
     <>
       <div className={styles.innerApp}>
         <div className={styles.appContainer}>
-          {/* <div className={styles.line1}></div>
-          <div className={styles.line2}></div>
-          <div className={styles.line3}></div>
-          <div className={styles.line4}></div> */}
-          <h1 className={showTitle ? styles.titleActive : styles.titleHide}>
-            {" "}
-            ШАНС 2.0
-          </h1>
-          <div className={styles.InnerButtons}>
-            <Link to={"SignUp/"}>
-              <div className={styles.singUpButton}>Регистрация</div>
-            </Link>
-            <Link to={"login/"}>
-              <div className={styles.loginButton}>Войти</div>
-            </Link>
-            <Link to={"main/"}>
-              <div className={styles.noAuthButton}>Войти как гость</div>
-            </Link>
+
+
+          <div className={styles.closedMessage}>
+            <h2>Сайт временно закрыт</h2>
+            <p>Уважаемые пользователи!</p>
+            <p>Наше приложение теперь доступно для скачивания в RuStore.</p>
+            <p>Перейдите по ссылке ниже, чтобы установить приложение:</p>
+
+            <button
+              onClick={handleRustoreClick}
+              className={styles.rustoreButton}
+            >
+              Скачать в RuStore
+            </button>
+
+            <p className={styles.smallNote}>
+              Приложение: ru.ot.test
+            </p>
           </div>
         </div>
       </div>
